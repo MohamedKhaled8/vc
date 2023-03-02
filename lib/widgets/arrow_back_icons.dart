@@ -1,0 +1,32 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import '../view/spalsh_view/splash_screen_view.dart';
+
+class ArrowBackIcon extends StatelessWidget {
+  const ArrowBackIcon({
+    Key? key,
+    this.ontap,
+     this.color,
+  }) : super(key: key);
+ final Function()? ontap;
+ final Color? color;
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          InkWell(
+              onTap: ontap,
+              child:  Icon(
+                Icons.arrow_back_ios,
+                color: color,
+              )),
+        ],
+      ),
+    );
+  }
+}
