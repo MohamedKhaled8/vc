@@ -5,6 +5,11 @@ import 'package:vc/view/home_view/bottom_nav_bar.dart';
 import 'package:vc/view/home_view/chat_view.dart';
 import 'package:vc/view/home_view/detailes_screen_view.dart';
 import 'package:vc/view/home_view/home.dart';
+import 'package:vc/view/home_view/review_screen.dart';
+import 'package:vc/view/payment/checkout_screen.dart';
+import 'package:vc/view/payment/payment_method_screen.dart';
+import 'package:vc/view/samples/samples_screen.dart';
+import 'package:vc/view/service_form/service_form_screen.dart';
 
 main() async {
   // WidgetsFlutterBinding.ensureInitialized();
@@ -26,7 +31,7 @@ class MyApp extends StatelessWidget {
           return   GetMaterialApp(
             title: 'Value Cleaning',
             debugShowCheckedModeBanner: false,
-            home: DetailsView(),
+            home: CheckoutScreen(),
           );
         });
   }

@@ -89,7 +89,7 @@ class LoginView extends StatelessWidget {
                             );
                           }),
                                 SizedBox(height: screenUtil.setHeight(20)),
-                       customButtomTWo(
+                       CustomButtonTWo(
                           ontap: () {
                             Get.to(SignUpView());
                           },

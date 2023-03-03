@@ -71,7 +71,7 @@ class _SplahScreenState extends State<SplahScreen> {
                       }).toList(),
                       onChanged: (value) {
                         setState(() {
-                          seclected = value;
+                          seclected = value as String?;
                         });
                       }),
                 ),

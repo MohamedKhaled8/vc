@@ -3,8 +3,8 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // ignore: camel_case_types
-class customButtomTWo extends StatelessWidget {
-  const customButtomTWo({
+class CustomButtonTWo extends StatelessWidget {
+  const CustomButtonTWo({
     Key? key,
     required this.screenUtil,
     required this.color,

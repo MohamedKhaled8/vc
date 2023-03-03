@@ -15,7 +15,6 @@ class CustomButtom extends StatelessWidget {
  final String text;
  final Color color;
  final Color? color1;
-
   final ScreenUtil screenUtil;
 final Function()? ontap;
 
@@ -23,7 +22,6 @@ final Function()? ontap;
   Widget build(BuildContext context) {
     return InkWell(
       onTap: ontap,
-     
       child: Container(
           height: screenUtil.setHeight(48),
           width: screenUtil.setWidth(171),
@@ -39,15 +37,16 @@ final Function()? ontap;
             ],
           ),
           child:  Center(
-            child: Text(text,
-                style:  TextStyle(
+            child: Text(
+                text,
+                style:TextStyle(
                     color: color1,
                     fontWeight: FontWeight.w500,
                     fontStyle: FontStyle.normal,
                     fontSize: 18.0),
                 textAlign: TextAlign.center),
           ), 
-          
+
           
           ),
           

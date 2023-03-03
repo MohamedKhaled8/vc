@@ -4,7 +4,7 @@ import 'package:vc/view/home_view/home.dart';
 import 'package:vc/view/home_view/user_profile.dart';
 
 import 'messages.dart';
-import 'orders_view.dart';
+import 'review_screen.dart';
 
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});
@@ -24,10 +24,10 @@ class _BottomNavBarState extends State<BottomNavBar>
     super.initState();
   }
 
-  List<Widget> myPages = const [
+  List<Widget> myPages =  [
     HomeView(),
     MessagesView(),
-    OrdersView(),
+    ReviewScreen(),
     UserProfile(),
   ];
 

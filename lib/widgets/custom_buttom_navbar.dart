@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:vc/view/home_view/review_screen.dart';
 
 import '../theme/constant/const_colors.dart';
 
@@ -68,9 +70,14 @@ class CustomButtomNavBar extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     
-                    const Text(
-                      "Schedule",
-                      style: TextStyle(color: Colors.white, fontSize: 20),
+                    InkWell(
+                      onTap: (){
+                        Get.to(()=>ReviewScreen());
+                      },
+                      child: const Text(
+                        "Schedule",
+                        style: TextStyle(color: Colors.white, fontSize: 20),
+                      ),
                     ),
                     Image.asset("assets/icons/schedule2.png"),
                   ],

@@ -13,7 +13,6 @@ import 'login_view.dart';
 
 class AuthAppView extends StatelessWidget {
   const AuthAppView({super.key});
-
   @override
   Widget build(BuildContext context) {
     // ignore: unused_local_variable
@@ -36,7 +35,6 @@ class AuthAppView extends StatelessWidget {
                     )),
                 OutlinedButton(
                     style: OutlinedButton.styleFrom(
-                        foregroundColor: Colors.black,
                         minimumSize: const Size(130, 50),
                         textStyle: const TextStyle(fontSize: 18),
                         side: const BorderSide(width: 1, color: Colors.black),
@@ -68,7 +66,7 @@ class AuthAppView extends StatelessWidget {
               ),
             ),
           ),
-          customButtomTWo(
+          CustomButtonTWo(
             ontap: (){
               Get.to( SignUpView());
             },
@@ -80,7 +78,7 @@ class AuthAppView extends StatelessWidget {
           SizedBox(
             height: screenUtil.setHeight(30),
           ),
-          customButtomTWo(
+          CustomButtonTWo(
             ontap: (){
               Get.to(const LoginView());
             },

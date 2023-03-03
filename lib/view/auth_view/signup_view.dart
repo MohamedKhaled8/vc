@@ -73,7 +73,7 @@ class SignUpView extends StatelessWidget {
                           text: 'Confirm password',
                         ),
                         SizedBox(height: screenUtil.setHeight(20)),
-                        customButtomTWo(
+                        CustomButtonTWo(
                           ontap: () {
                             Get.to(SignUpView());
                           },

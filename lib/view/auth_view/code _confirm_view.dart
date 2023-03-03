@@ -61,7 +61,7 @@ class CodeConfirmView extends StatelessWidget {
                       SizedBox(
                         height: screenUtil.setHeight(30),
                       ),
-                      customButtomTWo(
+                      CustomButtonTWo(
                         ontap: () {
                           Get.to(SignUpView());
                         },

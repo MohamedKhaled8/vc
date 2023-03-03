@@ -62,7 +62,7 @@ ScreenUtil screenUtil = ScreenUtil();
                            SizedBox(
                       height: screenUtil.setHeight(40),
                     ),
-                           customButtomTWo(
+                           CustomButtonTWo(
                           ontap: () {
                             Get.to(CodeConfirmView());
                           },
