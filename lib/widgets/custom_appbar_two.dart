@@ -27,7 +27,7 @@ class CustomAppBarTwo extends StatelessWidget {
            Text(text,style: const TextStyle(color: Colors.white,fontSize: 20),),
           const SizedBox(),
           SizedBox(width: screenUtil.setWidth(10),),
-          CustomTextNextButton(),
+          // CustomTextNextButton(),
         ],
       ),
     );

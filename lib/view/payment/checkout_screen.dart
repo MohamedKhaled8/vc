@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:vc/widgets/container_shadow.dart';
 import 'package:vc/widgets/main_button.dart';
 import '../../theme/constant/const_colors.dart';
 import '../../widgets/arrow_back_icons.dart';
 import '../../widgets/custom_buttom.dart';
-import '../../widgets/custom_text_next_button.dart';
 import '../../widgets/cutom_buttom_two.dart';
 
 class CheckoutScreen extends StatelessWidget {

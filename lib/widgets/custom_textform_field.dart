@@ -24,7 +24,7 @@ class CustomTextFormField extends StatelessWidget {
       autofocus: false,
       textInputAction: TextInputAction.next,
       onSaved: (newValue) {},
-      keyboardType: TextInputType.emailAddress,
+      keyboardType: TextInputType.name,
       decoration: InputDecoration(
         enabledBorder: OutlineInputBorder(
           borderSide: const BorderSide(width: 1, color: Colors.green),
@@ -44,9 +44,10 @@ class CustomTextFormField extends StatelessWidget {
         ),
         contentPadding: const EdgeInsets.fromLTRB(22, 18, 22, 18),
         hintText: text,
-        hintStyle: const TextStyle(fontSize: 14 , fontWeight: FontWeight.bold),
+        hintStyle: const TextStyle(fontSize: 14 , fontWeight: FontWeight.bold,color: Colors.grey),
         fillColor: Colors.white,
         filled: true,
+        suffixIcon: icon,
       ),
     );
   }
