@@ -2,19 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get/get_connect/http/src/utils/utils.dart';
+import 'package:vc/widgets/container_shadow.dart';
 import '../../widgets/custom_buttom.dart';
 import '../onboarding_screen_view/onboarding_screen.dart';
 
-class SplahScreen extends StatefulWidget {
-  const SplahScreen({
+class SplashScreen extends StatefulWidget {
+  const SplashScreen({
     Key? key,
   }) : super(key: key);
 
   @override
-  State<SplahScreen> createState() => _SplahScreenState();
+  State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _SplahScreenState extends State<SplahScreen> {
+class _SplashScreenState extends State<SplashScreen> {
   ScreenUtil screenUtil = ScreenUtil();
   String? seclected;
   List<String> lang = ["English  , Swide"];
@@ -28,6 +29,9 @@ class _SplahScreenState extends State<SplahScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset("assets/icons/Agora cleaning.png"),
+              SizedBox(
+                height: screenUtil.setHeight(10),
+              ),
               const Text("Slogan for Agora cleaning"),
               SizedBox(
                 height: screenUtil.setHeight(40),
@@ -39,16 +43,7 @@ class _SplahScreenState extends State<SplahScreen> {
               Container(
                 width: screenUtil.setWidth(308),
                 height: screenUtil.setHeight(48),
-                decoration: const BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(8)),
-                    boxShadow: [
-                      BoxShadow(
-                          color: Color(0x33000000),
-                          offset: Offset(0, 0),
-                          blurRadius: 8,
-                          spreadRadius: 0)
-                    ],
-                    color: Color(0xffffffff)),
+                decoration:buildShadowContainer(borderRadius: BorderRadius.circular(20)),
                 child: Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: DropdownButton(

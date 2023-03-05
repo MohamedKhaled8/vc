@@ -9,7 +9,7 @@ import '../../controller/myController.dart';
 import '../../theme/constant/const_colors.dart';
 
 class ServiceFormScreen extends StatefulWidget {
-  ServiceFormScreen({Key? key}) : super(key: key);
+   ServiceFormScreen({Key? key}) : super(key: key);
 
   @override
   State<ServiceFormScreen> createState() => _ServiceFormScreenState();
@@ -27,342 +27,211 @@ class _ServiceFormScreenState extends State<ServiceFormScreen> {
       body: SizedBox(
         height: double.infinity,
         width: double.infinity,
-        child: Stack(
-          children: [
-            CustomAppbar(),
-            Positioned(
-              top: 180,
-              child: Column(
-                children: [
-                  Container(
-                    padding:
-                        const EdgeInsets.only(right: 20, left: 20, top: 30),
-                    width: MediaQuery.of(context).size.width,
-                    height: screenUtil.setHeight(800),
-                    decoration: const BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(22),
-                        topRight: Radius.circular(22),
-                      ),
-                    ),
-                    child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Text(
-                            'Work area',
-                            style: TextStyle(
-                                fontSize: 18, fontWeight: FontWeight.bold),
-                          ),
-                          SfRangeSlider(
-                            activeColor: ColorApp.primary,
-                            inactiveColor: ColorApp.secound,
-                            min: 0.0,
-                            max: 100.0,
-                            values: values,
-                            interval: 20,
-                            showTicks: true,
-                            showLabels: true,
-                            enableTooltip: true,
-                            minorTicksPerInterval: 1,
-                            onChanged: (SfRangeValues values) {
-                              setState(() {
-                                values = values;
-                              });
-                            },
-                          ),
-                          SizedBox(
-                            height: screenUtil.setHeight(15),
-                          ),
-                          const Text(
-                            'Date and Time',
-                            style: TextStyle(
-                                fontSize: 18, fontWeight: FontWeight.bold),
-                          ),
-                          SizedBox(
-                            height: screenUtil.setHeight(10),
-                          ),
-                          Row(
-                            children: [
-                              Expanded(
-                                child: Container(
-                                  height: screenUtil.setHeight(55),
-                                  width: size.width / 2,
-                                  decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.circular(10),
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: Colors.grey.withOpacity(0.5),
-                                          spreadRadius: 3,
-                                          blurRadius: 5,
-                                          offset: const Offset(0,
-                                              3), // changes position of shadow
-                                        ),
-                                      ]),
-                                  child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Container(
-                                        height: double.infinity,
-                                        width: screenUtil.setWidth(50),
-                                        decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(10),
-                                          color: ColorApp.primary,
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        width: screenUtil.setWidth(10),
-                                      ),
-                                      const Expanded(
-                                        child: Text(
-                                          "September 21, 2023",
-                                          style: TextStyle(
-                                              fontSize: 16,
-                                              fontWeight: FontWeight.normal),
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                width: screenUtil.setWidth(10),
-                              ),
-                              Expanded(
-                                child: Container(
-                                  height: screenUtil.setHeight(55),
-                                  width: size.width / 2,
-                                  decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.circular(10),
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: Colors.grey.withOpacity(0.5),
-                                          spreadRadius: 3,
-                                          blurRadius: 5,
-                                          offset: const Offset(0,
-                                              3), // changes position of shadow
-                                        ),
-                                      ]),
-                                  child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Container(
-                                        height: double.infinity,
-                                        width: screenUtil.setWidth(50),
-                                        decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(10),
-                                          color: ColorApp.primary,
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        width: screenUtil.setWidth(10),
-                                      ),
-                                      const Expanded(
-                                        child: Text(
-                                          "04 : 35 pm",
-                                          style: TextStyle(
-                                              fontSize: 16,
-                                              fontWeight: FontWeight.normal),
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                          SizedBox(
-                            height: screenUtil.setHeight(15),
-                          ),
-                          const Text(
-                            'Address',
-                            style: TextStyle(
-                                fontSize: 18, fontWeight: FontWeight.bold),
-                          ),
-                          SizedBox(
-                            height: screenUtil.setHeight(10),
-                          ),
-                          Container(
-                            height: screenUtil.setHeight(55),
-                            width: size.width,
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(10),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.grey.withOpacity(0.5),
-                                    spreadRadius: 3,
-                                    blurRadius: 5,
-                                    offset: const Offset(
-                                        0, 3), // changes position of shadow
-                                  ),
-                                ]),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Container(
-                                  height: double.infinity,
-                                  width: screenUtil.setWidth(50),
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10),
-                                    color: ColorApp.primary,
-                                  ),
-                                ),
-                                SizedBox(
-                                  width: screenUtil.setWidth(10),
-                                ),
-                                const Expanded(
-                                  child: Text(
-                                    '95, Opposite Arjun College, Kairav Plot',
-                                    style: TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.normal),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          SizedBox(
-                            height: screenUtil.setHeight(15),
-                          ),
-                          const Text(
-                            'Repeat',
-                            style: TextStyle(
-                                fontSize: 18, fontWeight: FontWeight.bold),
-                          ),
-                          SizedBox(
-                            height: screenUtil.setHeight(10),
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Expanded(
-                                child: CustomButtom(
-                                  text: 'Once',
-                                  color: ColorApp.primary,
-                                  screenUtil: screenUtil,
-                                  color1: Colors.white,
-                                ),
-                              ),
-                              SizedBox(
-                                width: screenUtil.setWidth(10),
-                              ),
-                              Expanded(
-                                child: CustomButtom(
-                                  text: 'Weekly',
-                                  color: Colors.white,
-                                  screenUtil: screenUtil,
-                                  color1: ColorApp.primary,
-                                ),
-                              ),
-                              SizedBox(
-                                width: screenUtil.setWidth(10),
-                              ),
-                              Expanded(
-                                child: CustomButtom(
-                                  text: 'Monthly',
-                                  color: Colors.white,
-                                  screenUtil: screenUtil,
-                                  color1: ColorApp.primary,
-                                ),
-                              ),
-                            ],
-                          ),
-                          SizedBox(
-                            height: screenUtil.setHeight(15),
-                          ),
-                          const Text(
-                            'Extra Service',
-                            style: TextStyle(
-                                fontSize: 18, fontWeight: FontWeight.bold),
-                          ),
-                          SizedBox(
-                            height: screenUtil.setHeight(10),
-                          ),
-                          Column(
-                            children: [
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Expanded(
-                                    child: CustomButtom(
-                                      text: 'Cooking',
-                                      color: ColorApp.primary,
-                                      screenUtil: screenUtil,
-                                      color1: Colors.white,
-                                    ),
-                                  ),
-                                  Expanded(
-                                    child: CustomButtom(
-                                      text: 'Once',
-                                      color: Colors.white,
-                                      screenUtil: screenUtil,
-                                      color1: ColorApp.primary,
-                                    ),
-                                  ),
-                                  Expanded(
-                                    child: CustomButtom(
-                                      text: 'Washing & Cooking',
-                                      color: Colors.white,
-                                      screenUtil: screenUtil,
-                                      color1: ColorApp.primary,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              SizedBox(
-                                height: screenUtil.setHeight(10),
-                              ),
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Expanded(
-                                    child: CustomButtom(
-                                      text: 'Window',
-                                      color: ColorApp.primary,
-                                      screenUtil: screenUtil,
-                                      color1: Colors.white,
-                                    ),
-                                  ),
-                                  Expanded(
-                                    child: CustomButtom(
-                                      text: 'Dish Washing',
-                                      color: Colors.white,
-                                      screenUtil: screenUtil,
-                                      color1: ColorApp.primary,
-                                    ),
-                                  ),
-                                  Expanded(
-                                    child: CustomButtom(
-                                      text: 'Cooking',
-                                      color: Colors.white,
-                                      screenUtil: screenUtil,
-                                      color1: ColorApp.primary,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                          SizedBox(
-                            height: screenUtil.setHeight(20),
-                          ),
-                          const CustomTextNextButton(),
-                        ]),
-                  ),
-                ],
-              ),
-            ),
-          ],
+         child: Stack(
+            children: [
+              CustomAppbar(),
+              Positioned (
+                 top: 180,
+                 child: Column(
+                   children: [
+                     Container(
+          padding: const EdgeInsets.only(right: 20, left: 20, top: 30),
+          width: MediaQuery.of(context).size.width,
+          height: screenUtil.setHeight(800),
+          decoration: const BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(22),
+                      topRight: Radius.circular(22),),),
+                       child: Column(
+                         crossAxisAlignment: CrossAxisAlignment.start,
+                         children: [
+                           Text('Work area',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
+                           SfRangeSlider(
+                             activeColor: ColorApp.primary,
+                             inactiveColor: ColorApp.secound,
+                             min: 0.0,
+                             max: 100.0,
+                             values: values,
+                             interval: 20,
+                             showTicks: true,
+                             showLabels: true,
+                             enableTooltip: true,
+                             minorTicksPerInterval: 1,
+                             onChanged: (SfRangeValues values){
+                               setState(() {
+                                 values = values;
+                               });
+                             },
+                           ),
+                           SizedBox(height: screenUtil.setHeight(15),),
+                           const Text('Date and Time',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
+                           SizedBox(height: screenUtil.setHeight(10),),
+                           Row(
+                             children: [
+                               Expanded(child: Container(
+                                 height: screenUtil.setHeight(55),
+                                 width: size.width/2,
+                                 decoration: BoxDecoration(
+                                     color: Colors.white,
+                                     borderRadius: BorderRadius.circular(10),
+                                     boxShadow: [
+                                       BoxShadow(
+                                         color: Colors.grey.withOpacity(0.5),
+                                         spreadRadius: 3,
+                                         blurRadius: 5,
+                                         offset: const Offset(
+                                             0, 3), // changes position of shadow
+                                       ),
+                                     ]),
+                                 child: Row(
+                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                   children: [
+                                     Container(
+                                       height: double.infinity,
+                                       width: screenUtil.setWidth(50),
+                                       decoration: BoxDecoration(
+                                         borderRadius:  BorderRadius.circular(10),
+                                         color: ColorApp.primary,
+                                       ),
+                                     ),
+                                     SizedBox(width: screenUtil.setWidth(10),),
+                                     const Expanded(child: Text(
+                                       "September 21, 2023",
+                                       style: TextStyle(
+                                           fontSize: 16, fontWeight: FontWeight.normal),
+                                     ),)
+
+                                   ],
+                                 ),
+                               ),),
+                               SizedBox(width: screenUtil.setWidth(10),),
+                               Expanded(child: Container(
+                                 height: screenUtil.setHeight(55),
+                                 width: size.width/2,
+                                 decoration: BoxDecoration(
+                                     color: Colors.white,
+                                     borderRadius: BorderRadius.circular(10),
+                                     boxShadow: [
+                                       BoxShadow(
+                                         color: Colors.grey.withOpacity(0.5),
+                                         spreadRadius: 3,
+                                         blurRadius: 5,
+                                         offset: const Offset(
+                                             0, 3), // changes position of shadow
+                                       ),
+                                     ]),
+                                 child: Row(
+                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                   children: [
+                                     Container(
+                                       height: double.infinity,
+                                       width: screenUtil.setWidth(50),
+                                       decoration: BoxDecoration(
+                                         borderRadius:  BorderRadius.circular(10),
+                                         color: ColorApp.primary,
+                                       ),
+                                     ),
+                                     SizedBox(width: screenUtil.setWidth(10),),
+                                     const Expanded(child: Text(
+                                       "04 : 35 pm",
+                                       style: TextStyle(
+                                           fontSize: 16, fontWeight: FontWeight.normal),
+                                     ),)
+
+                                   ],
+                                 ),
+                               ),),
+                             ],
+                           ),
+                           SizedBox(height: screenUtil.setHeight(15),),
+                           const Text('Address',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
+                           SizedBox(height: screenUtil.setHeight(10),),
+                           Container(
+                             height: screenUtil.setHeight(55),
+                             width: size.width,
+                             decoration: BoxDecoration(
+                                 color: Colors.white,
+                                 borderRadius: BorderRadius.circular(10),
+                                 boxShadow: [
+                                   BoxShadow(
+                                     color: Colors.grey.withOpacity(0.5),
+                                     spreadRadius: 3,
+                                     blurRadius: 5,
+                                     offset: const Offset(
+                                         0, 3), // changes position of shadow
+                                   ),
+                                 ]),
+                             child: Row(
+                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                               children: [
+                                 Container(
+                                   height: double.infinity,
+                                   width: screenUtil.setWidth(50),
+                                   decoration: BoxDecoration(
+                                     borderRadius:  BorderRadius.circular(10),
+                                     color: ColorApp.primary,
+                                   ),
+                                 ),
+                                 SizedBox(width: screenUtil.setWidth(10),),
+                                 const Expanded(child: Text(
+                                   '95, Opposite Arjun College, Kairav Plot',
+                                   style: TextStyle(
+                                       fontSize: 16, fontWeight: FontWeight.normal),
+                                 ),),
+                               ],
+                             ),
+                           ),
+                           SizedBox(height: screenUtil.setHeight(15),),
+                           const Text('Repeat',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
+                           SizedBox(height: screenUtil.setHeight(10),),
+                           Row(
+                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                             children: [
+                               Expanded(child:CustomButtom(text: 'Once', color: ColorApp.primary, screenUtil: screenUtil,color1: Colors.white,),),
+                               SizedBox(width: screenUtil.setWidth(10),),
+                               Expanded(child:CustomButtom(text: 'Weekly', color: Colors.white, screenUtil: screenUtil,color1: ColorApp.primary,),),
+                               SizedBox(width: screenUtil.setWidth(10),),
+                               Expanded(child:CustomButtom(text: 'Monthly', color: Colors.white, screenUtil: screenUtil,color1: ColorApp.primary,),),
+                             ],
+                           ),
+                            SizedBox(height: screenUtil.setHeight(15),),
+                           const Text('Extra Service',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
+                           SizedBox(height: screenUtil.setHeight(10),),
+                           Column(
+                             children: [
+                               Row(
+                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                 children: [
+                                   Expanded(child:CustomButtom(text: 'Cooking', color: ColorApp.primary, screenUtil: screenUtil,color1: Colors.white,),),
+                                   Expanded(child:CustomButtom(text: 'Once', color: Colors.white, screenUtil: screenUtil,color1: ColorApp.primary,),),
+                                   Expanded(child:CustomButtom(text: 'Washing & Cooking', color: Colors.white, screenUtil: screenUtil,color1: ColorApp.primary,),),
+
+                                 ],
+                               ),
+                               SizedBox(height: screenUtil.setHeight(10),),
+                               Row(
+                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                 children: [
+                                   Expanded(child:CustomButtom(text: 'Window', color: ColorApp.primary, screenUtil: screenUtil,color1: Colors.white,),),
+                                   Expanded(child:CustomButtom(text: 'Dish Washing', color: Colors.white, screenUtil: screenUtil,color1: ColorApp.primary,),),
+                                   Expanded(child:CustomButtom(text: 'Cooking', color: Colors.white, screenUtil: screenUtil,color1: ColorApp.primary,),),
+
+                                 ],
+                               ),
+                             ],
+                           ),
+                           SizedBox(height: screenUtil.setHeight(20),),
+                           CustomTextNextButton(),
+
+                         ]
+                           ),
+                       ),
+                   ],
+                 ),
         ),
+            ],
+          ),
       ),
     );
   }

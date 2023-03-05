@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:vc/view/auth_view/signup_view.dart';
+import 'package:vc/view/home_view/home.dart';
+import 'package:vc/widgets/custom_buttom.dart';
 
 import '../../theme/constant/const_colors.dart';
 import '../../widgets/arrow_back_icons.dart';
 import '../../widgets/custom_textform_field.dart';
-import '../../widgets/cutom_buttom_two.dart';
 import 'forgot_password.dart';
 
 // ignore: must_be_immutable
@@ -14,7 +15,8 @@ class CodeConfirmView extends StatelessWidget {
   CodeConfirmView({super.key});
   ScreenUtil screenUtil = ScreenUtil();
   // ignore: unused_field
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final TextEditingController code= TextEditingController();
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,23 +55,21 @@ class CodeConfirmView extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.all(20),
                   child: Form(
-                    key: _formKey,
+                    key: formKey,
                     child: Column(children: [
                       CustomTextFormField(
                         text: 'Enter code ',
+                        controller: code,
+                        type: TextInputType.name,
                       ),
                       SizedBox(
                         height: screenUtil.setHeight(30),
                       ),
-                      CustomButtonTWo(
-                        ontap: () {
-                          Get.to(SignUpView());
-                        },
-                        screenUtil: screenUtil,
-                        txt: 'Sign up',
-                        color: ColorApp.primary,
-                        color1: Colors.white,
-                      ),
+                      CustomButtom(text: 'Confirm', color: ColorApp.primary, screenUtil: screenUtil,color1: Colors.white,ontap: (){
+                        if(formKey.currentState!.validate()){
+                          Get.to(()=>HomeView());
+                        }
+                      },),
                       SizedBox(
                         height: screenUtil.setHeight(30),
                       ),

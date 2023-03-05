@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:vc/view/payment/checkout_screen.dart';
 import 'package:vc/widgets/custom_appbar_two.dart';
 import 'package:vc/widgets/custom_text_next_button.dart';
 
@@ -23,7 +25,7 @@ class PaymentMethodScreen extends StatelessWidget {
                 color: Colors.white,
                 boxShadow: [BoxShadow(
                   color: Colors.grey.withOpacity(0.5),
-                  offset:Offset(0, 3),
+                  offset:const Offset(0, 3),
                   spreadRadius: 3,
                   blurRadius: 5,
                 )]
@@ -59,7 +61,7 @@ class PaymentMethodScreen extends StatelessWidget {
             ),),
           )),
           SizedBox(height: screenUtil.setHeight(100),),
-          CustomTextNextButton(),
+          CustomTextNextButton(onTap: (){Get.to(()=>const CheckoutScreen());}),
 
 
         ],

@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:vc/view/home_view/home.dart';
 import 'package:vc/view/spalsh_view/splash_screen_view.dart';
 
 import '../../model/onboarding_content.dart';
 import '../../theme/constant/const_colors.dart';
+import '../../widgets/arrow_back_icons.dart';
 import '../../widgets/custom_buttom.dart';
 import '../auth_view/auth_view.dart';
 
@@ -41,17 +43,9 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(
-              height: 50,
+              height: 20,
             ),
-            InkWell(
-                onTap: () {
-        
-                Get.to(const SplahScreen());
-                },
-                child: const Icon(
-                  Icons.arrow_back_ios,
-                  color: Colors.black,
-                )),
+            ArrowBackIcon(ontap: (){ Get.to(const SplashScreen());},),
             Expanded(
               child: PageView.builder(
                   controller: _controller,
@@ -67,14 +61,14 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                       child: Column(
                         children: [
                           SizedBox(
-                            height: screenUtil.setHeight(40),
+                            height: screenUtil.setHeight(20),
                           ),
                           Image.asset(
                             contents[index].image!,
                             height: screenUtil.setHeight(300),
                           ),
                           SizedBox(
-                            height: screenUtil.setHeight(40),
+                            height: screenUtil.setHeight(20),
                           ),
                           Text(
                             contents[index].title!,
@@ -84,12 +78,14 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                           SizedBox(
                             height: screenUtil.setHeight(20),
                           ),
-                          Text(contents[index].discription!,
-                              textAlign: TextAlign.center,
-                              style: const TextStyle(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.grey)),
+                          Expanded(
+                            child: Text(contents[index].discription!,
+                                textAlign: TextAlign.center,
+                                style: const TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.grey)),
+                          ),
                         ],
                       ),
                     );
@@ -103,7 +99,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                           children: [
                             buildDot(index),
                           ],
-                        ))),
+                        ),),),
             const SizedBox(
               height: 20,
             ),
@@ -113,6 +109,9 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 CustomButtom(
                   screenUtil: screenUtil,
                   text: 'Skip' ,
+                  ontap: (){
+                    Get.to(()=>HomeView());
+                  },
                   color: ColorApp.secound, color1: Colors.black,
                 ),
                 CustomButtom(
@@ -147,11 +146,11 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   ) {
     return Container(
       height: 10,
-      width: currentIndex == index ? 25 : 10,
+      width: currentIndex == index ? 30 : 30,
       margin: const EdgeInsets.only(right: 10),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
-        color: ColorApp.primary,
+        color:currentIndex==index?ColorApp.primary: ColorApp.secound,
       ),
     );
   }

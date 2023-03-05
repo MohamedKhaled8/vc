@@ -5,7 +5,8 @@ import '../theme/constant/const_colors.dart';
 import 'custom_buttom.dart';
 
 class CustomTextNextButton extends StatelessWidget {
-  const CustomTextNextButton({Key? key}) : super(key: key);
+final Function()? onTap;
+   const CustomTextNextButton({Key? key, this.onTap}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +43,7 @@ class CustomTextNextButton extends StatelessWidget {
               borderRadius:  BorderRadius.circular(10),
               color: ColorApp.primary,
             ),
-            child:CustomButtom(text: 'Next >>', color: ColorApp.primary, screenUtil: screenUtil,color1: Colors.white,ontap: (){},),
+            child:CustomButtom(text: 'Next >>', color: ColorApp.primary, screenUtil: screenUtil,color1: Colors.white,ontap: onTap,),
           ),
 
         ],

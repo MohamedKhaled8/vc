@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:vc/view/payment/order_details_screen.dart';
 import 'package:vc/widgets/main_button.dart';
 import '../../theme/constant/const_colors.dart';
 import '../../widgets/arrow_back_icons.dart';
@@ -21,7 +22,7 @@ class CheckoutScreen extends StatelessWidget {
             children: [
               SizedBox(
                 width: size.width,
-                height: size.height / 2-100,
+                height: size.height / 2 - 100,
               ),
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -85,7 +86,7 @@ class CheckoutScreen extends StatelessWidget {
                           height: 80,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
-                            color:Colors.yellow.shade700,
+                            color: Colors.yellow.shade700,
                           ),
                         ),
                       ),
@@ -125,7 +126,7 @@ class CheckoutScreen extends StatelessWidget {
                     CircleAvatar(
                       radius: 15,
                       backgroundColor: ColorApp.primary,
-                      child:  Icon(Icons.add),
+                      child: Icon(Icons.add),
                     ),
                     SizedBox(
                       width: screenUtil.setWidth(10),
@@ -171,40 +172,43 @@ class CheckoutScreen extends StatelessWidget {
                   SizedBox(
                     height: screenUtil.setHeight(5),
                   ),
-                  Row(children: [
-                    Expanded(
-                      child: Row(
+                  Row(
+                    children: [
+                      Expanded(
+                        child: Row(
+                          children: [
+                            Text(
+                              'Date :',
+                              style:
+                                  TextStyle(fontSize: 14, color: Colors.grey),
+                            ),
+                            Text(
+                              'September 21, 2023',
+                              style: TextStyle(fontSize: 16),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Row(
                         children: [
                           Text(
-                            'Date :',
-                            style: TextStyle(fontSize: 14,color: Colors.grey),
+                            'Time :',
+                            style: TextStyle(fontSize: 14, color: Colors.grey),
                           ),
                           Text(
-                            'September 21, 2023',
+                            '01:30 pm',
                             style: TextStyle(fontSize: 16),
                           ),
                         ],
                       ),
-                    ),
-                    Row(
-                      children: [
-                        Text(
-                          'Time :',
-                          style: TextStyle(fontSize: 14,color: Colors.grey),
-                        ),
-                        Text(
-                          '01:30 pm',
-                          style: TextStyle(fontSize: 16),
-                        ),
-                      ],
-                    ),
-                  ],),
+                    ],
+                  ),
                   SizedBox(
                     height: screenUtil.setHeight(5),
                   ),
                   Text(
                     'Address :',
-                    style: TextStyle(fontSize: 14,color: Colors.grey),
+                    style: TextStyle(fontSize: 14, color: Colors.grey),
                   ),
                   Text(
                     '95, Opposite Arjun College, Kairav Plot, Township No. 21',
@@ -213,16 +217,31 @@ class CheckoutScreen extends StatelessWidget {
                   SizedBox(
                     height: screenUtil.setHeight(10),
                   ),
-                  Expanded(child: Row(
-                    children: [
-                      Expanded(child: CustomButtom(text: 'See All Details', color: ColorApp.primary, screenUtil: screenUtil,color1: Colors.white,ontap: (){},)),
-                      SizedBox(
-                        width: screenUtil.setWidth(10),
-                      ),
-                      Expanded(child: CustomButtom(text: 'Edit', color: ColorApp.buttonBlue, screenUtil: screenUtil,color1: Colors.white,ontap: (){},)),
-                    ],
-                  ),),
-
+                  Expanded(
+                    child: Row(
+                      children: [
+                        Expanded(
+                            child: CustomButtom(
+                          text: 'See All Details',
+                          color: ColorApp.primary,
+                          screenUtil: screenUtil,
+                          color1: Colors.white,
+                          ontap: () {},
+                        )),
+                        SizedBox(
+                          width: screenUtil.setWidth(10),
+                        ),
+                        Expanded(
+                            child: CustomButtom(
+                          text: 'Edit',
+                          color: ColorApp.buttonBlue,
+                          screenUtil: screenUtil,
+                          color1: Colors.white,
+                          ontap: () {},
+                        )),
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -231,99 +250,103 @@ class CheckoutScreen extends StatelessWidget {
             height: screenUtil.setHeight(10),
           ),
           Expanded(
-              child: Container(
-                height: 130,
-                width: size.width - 40,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color: Colors.white,
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
-                        offset: Offset(0, 3),
-                        spreadRadius: 3,
-                        blurRadius: 5,
-                      )
-                    ]),
-                child: Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Price Summary',
-                        style: TextStyle(fontSize: 18, color: ColorApp.primary),
-                      ),
-                      SizedBox(
-                        height: screenUtil.setHeight(5),
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            child: Container(
+              height: 130,
+              width: size.width - 40,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: Colors.white,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.5),
+                      offset: Offset(0, 3),
+                      spreadRadius: 3,
+                      blurRadius: 5,
+                    )
+                  ]),
+              child: Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Price Summary',
+                      style: TextStyle(fontSize: 18, color: ColorApp.primary),
+                    ),
+                    SizedBox(
+                      height: screenUtil.setHeight(5),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Cleaning',
+                          style: TextStyle(fontSize: 18, color: Colors.grey),
+                        ),
+                        Text(
+                          '250 \$',
+                          style: TextStyle(fontSize: 18, color: Colors.black),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: screenUtil.setHeight(5),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Delivery',
+                          style: TextStyle(fontSize: 18, color: Colors.grey),
+                        ),
+                        Text(
+                          '10 \$',
+                          style: TextStyle(fontSize: 18, color: Colors.black),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: screenUtil.setHeight(5),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Discount',
+                          style: TextStyle(fontSize: 18, color: Colors.grey),
+                        ),
+                        Text(
+                          '0 \$',
+                          style: TextStyle(fontSize: 18, color: Colors.black),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: screenUtil.setHeight(10),
+                    ),
+                    Expanded(
+                      child: Row(
                         children: [
-                          Text(
-                            'Cleaning',
-                            style: TextStyle(fontSize: 18,color: Colors.grey),
-                          ),
-                          Text(
-                            '250 \$',
-                            style: TextStyle(fontSize: 18,color: Colors.black),
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: screenUtil.setHeight(5),
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Delivery',
-                            style: TextStyle(fontSize: 18,color: Colors.grey),
-                          ),
-                          Text(
-                            '10 \$',
-                            style: TextStyle(fontSize: 18,color: Colors.black),
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: screenUtil.setHeight(5),
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Discount',
-                            style: TextStyle(fontSize: 18,color: Colors.grey),
-                          ),
-                          Text(
-                            '0 \$',
-                            style: TextStyle(fontSize: 18,color: Colors.black),
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: screenUtil.setHeight(10),
-                      ),
-                      Expanded(
-                        child: Row(
-                          children: [
-                            Expanded(child: MainButton(text: 'See All Details', color: ColorApp.primary, screenUtil: screenUtil,child: Padding(
+                          Expanded(
+                              child: MainButton(
+                            text: 'See All Details',
+                            color: ColorApp.primary,
+                            screenUtil: screenUtil,
+                            child: Padding(
                               padding: const EdgeInsets.all(10.0),
                               child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
-                                  Text(
-                                      'Total',
-                                      style:TextStyle(
+                                  Text('Total',
+                                      style: TextStyle(
                                           color: Colors.white,
                                           fontWeight: FontWeight.w500,
                                           fontStyle: FontStyle.normal,
                                           fontSize: 20.0),
                                       textAlign: TextAlign.center),
-                                  Text(
-                                      '260\$',
-                                      style:TextStyle(
+                                  Text('260\$',
+                                      style: TextStyle(
                                           color: Colors.white,
                                           fontWeight: FontWeight.w500,
                                           fontStyle: FontStyle.normal,
@@ -331,40 +354,42 @@ class CheckoutScreen extends StatelessWidget {
                                       textAlign: TextAlign.center),
                                 ],
                               ),
-                            ),))
-
-                          ],
-                        ),
+                            ),
+                          ))
+                        ],
                       ),
-
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
+            ),
           ),
           SizedBox(
             height: screenUtil.setHeight(10),
           ),
-           Container(
-    height: 50,
-    width: size.width ,
-    decoration: BoxDecoration(
-    borderRadius: BorderRadius.circular(10),
-    color: Colors.white,
-    boxShadow: [
-    BoxShadow(
-    color: Colors.grey.withOpacity(0.5),
-    offset: Offset(0, 3),
-    spreadRadius: 3,
-    blurRadius: 5,
-    )
-    ]),
-    child: Padding(
-    padding: const EdgeInsets.symmetric(horizontal: 30,vertical: 5),
-          child:
-          CustomButtonTWo(screenUtil: screenUtil, color: ColorApp.primary, color1: Colors.white, txt: 'Payment confirmation'),
-    ),
-    ),
+          Container(
+            height: 50,
+            width: size.width,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: Colors.white,
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.5),
+                    offset: Offset(0, 3),
+                    spreadRadius: 3,
+                    blurRadius: 5,
+                  )
+                ]),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
+              child: CustomButtonTWo(
+                  screenUtil: screenUtil,
+                  color: ColorApp.primary,
+                  color1: Colors.white,
+                  txt: 'Payment confirmation',ontap: (){Get.to(()=>OrderDetailsScreen());},),
+            ),
+          ),
         ],
       ),
     );

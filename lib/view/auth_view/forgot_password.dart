@@ -16,71 +16,87 @@ import 'login_view.dart';
 class ForgotPasswordView extends StatelessWidget {
    ForgotPasswordView({super.key});
 ScreenUtil screenUtil = ScreenUtil();
+   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+
+   final TextEditingController email= TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
-        child: Column(
-          children: [
-             ArrowBackIcon(ontap: () => Get.to(const LoginView()),),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 80),
-              child: Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset("assets/icons/Agora cleaning.png"),
-                    const Text("Slogan for Agora cleaning"),
-                    SizedBox(
-                      height: screenUtil.setHeight(30),
-                    ),
-                    Text(
-                      "Forgot password ?",
-                      style: TextStyle(
-                          fontSize: 18,
-                         
-                          color: ColorApp.primary),
-                    ),
-                    const Text(
-                      "Dont Worry! it's happening ",
-                      style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.normal,
-                          ),
-                    ),
-                    SizedBox(
-                      height: screenUtil.setHeight(40),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(30),
-                      child: Form(
-                          child: Column(
-                        children: [
-                          CustomTextFormField(
-                            text: 'Enter email/ Phone number',
-                          ),
-                           SizedBox(
-                      height: screenUtil.setHeight(40),
-                    ),
-                           CustomButtonTWo(
-                          ontap: () {
-                            Get.to(CodeConfirmView());
-                          },
-                          screenUtil: screenUtil,
-                          txt: 'Sign up',
-                          color: ColorApp.primary,
-                          color1: Colors.white,
-                        ),
-                        ]
-                          ),
-                      
+        child: Form(
+          key: formKey,
+          child: Column(
+            children: [
+               ArrowBackIcon(ontap: () => Get.to(()=> LoginView()),),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 80),
+                child: Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset("assets/icons/Agora cleaning.png"),
+                      SizedBox(
+                        height: screenUtil.setHeight(10),
                       ),
-                    ),
-                        ],
-                      )),
-                    )
-                  ],
-                ),
+                      const Text("Slogan for Agora cleaning"),
+                      SizedBox(
+                        height: screenUtil.setHeight(30),
+                      ),
+                      Text(
+                        "Forgot password ?",
+                        style: TextStyle(
+                            fontSize: 18,
+
+                            color: ColorApp.primary),
+                      ),
+                      SizedBox(
+                        height: screenUtil.setHeight(10),
+                      ),
+                      const Text(
+                        "Dont Worry! it's happening ",
+                        style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.normal,
+                            ),
+                      ),
+                      SizedBox(
+                        height: screenUtil.setHeight(40),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(30),
+                        child: Form(
+                            child: Column(
+                          children: [
+                            CustomTextFormField(
+                              type: TextInputType.number,
+                              controller: email,
+                              text: 'Enter email/ Phone number',
+                            ),
+                             SizedBox(
+                        height: screenUtil.setHeight(40),
+                      ),
+                             CustomButtonTWo(
+                            ontap: () {
+                              if(formKey.currentState!.validate()){
+                              Get.to(()=>CodeConfirmView());
+                            }},
+                            screenUtil: screenUtil,
+                            txt: 'Submit',
+                            color: ColorApp.primary,
+                            color1: Colors.white,
+                          ),
+                          ]
+                            ),
+
+                        ),
+                      ),
+                          ],
+                        )),
+                      )
+                    ],
+                  ),
+        ),
               ));
   }
 }

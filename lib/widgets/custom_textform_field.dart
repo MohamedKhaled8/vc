@@ -6,25 +6,24 @@ class CustomTextFormField extends StatelessWidget {
   CustomTextFormField({
     Key? key,
     required this.text,
-    this.icon,
+
+    this.icon, required this.type,  this.controller,  this.validate,
   }) : super(key: key);
   final String text;
-
+  final TextInputType type;
+   FormFieldValidator? validate;
+   TextEditingController? controller;
   Icon? icon;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      validator: (value) {
-        if (value == null || value.isEmpty) {
-          return 'املاء المطوب';
-        }
-        return null;
-      },
+      validator: validate,
       autofocus: false,
+      controller: controller,
       textInputAction: TextInputAction.next,
       onSaved: (newValue) {},
-      keyboardType: TextInputType.name,
+      keyboardType: type,
       decoration: InputDecoration(
         enabledBorder: OutlineInputBorder(
           borderSide: const BorderSide(width: 1, color: Colors.green),

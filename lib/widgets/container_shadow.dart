@@ -4,13 +4,12 @@ import 'package:flutter/material.dart';
   return  BoxDecoration(
       borderRadius: borderRadius,
       color: Colors.white,
-      boxShadow: [
+      boxShadow: const [
         BoxShadow(
-          color: Colors.grey.withOpacity(0.5),
-          offset: const Offset(0, 3),
-          spreadRadius: 3,
-          blurRadius: 5,
-        )
+            color: Color(0x33000000),
+            offset: Offset(0, 0),
+            blurRadius: 8,
+            spreadRadius: 0)
       ]);
 }
 

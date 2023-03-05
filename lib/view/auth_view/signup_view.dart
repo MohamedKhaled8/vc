@@ -16,6 +16,12 @@ import 'auth_view.dart';
 class SignUpView extends StatelessWidget {
   SignUpView({super.key});
   ScreenUtil screenUtil = ScreenUtil();
+  final TextEditingController fName= TextEditingController();
+  final TextEditingController email= TextEditingController();
+  final TextEditingController phone= TextEditingController();
+  final TextEditingController address= TextEditingController();
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,22 +52,58 @@ class SignUpView extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(30),
                     child: Form(
+                      key: formKey,
                         child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         CustomTextFormField(
+                          validate: (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'املاء المطوب';
+                            }
+                            return null;
+                          },
+                          controller:fName ,
+                          type: TextInputType.name,
                           text: 'Enter full name',
                         ),
                         SizedBox(height: screenUtil.setHeight(20)),
                         CustomTextFormField(
+                            validate:(value) {
+                            if (value == null || value.isEmpty) {
+                              return 'املاء المطوب';
+                            }
+                            return null;
+                          },
+                          controller:address ,
+                          type: TextInputType.name,
                           text: 'Enter address',
                         ),
                         SizedBox(height: screenUtil.setHeight(20)),
                         CustomTextFormField(
+                          validate: (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'املاء المطوب';
+                            }
+                            return null;
+                          },
+                          controller:phone ,
+                          type: TextInputType.number,
                           text: 'Enter phone number',
                         ),
                         SizedBox(height: screenUtil.setHeight(20)),
                         CustomTextFormField(
+                          validate: (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'املاء المطوب';
+                            }
+                            else if (!value.contain('@')){
+                              return 'invalid Email';
+                            }
+                            return null;
+                          },
+                          controller:email ,
+                          type: TextInputType.emailAddress,
                           text: 'Enter email',
                         ),
                         SizedBox(height: screenUtil.setHeight(20)),
@@ -75,7 +117,9 @@ class SignUpView extends StatelessWidget {
                         SizedBox(height: screenUtil.setHeight(20)),
                         CustomButtonTWo(
                           ontap: () {
-                            Get.to(SignUpView());
+                            if(formKey.currentState!.validate()){
+                              Get.to(()=>SignUpView());
+                            }
                           },
                           screenUtil: screenUtil,
                           txt: 'Sign up',
@@ -83,7 +127,13 @@ class SignUpView extends StatelessWidget {
                           color1: Colors.white,
                         ),
                         SizedBox(height: screenUtil.setHeight(10)),
-                        const Text("OR SIGN IN WITH" , style: TextStyle(fontSize: 14),),
+                       Row(
+                         children: const [
+                       Expanded(child: Divider(height: 20,color: Colors.black,)),
+                           Text("  OR SIGN IN WITH  " , style: TextStyle(fontSize: 14),),
+                           Expanded(child: Divider(height: 2,color: Colors.black,)),
+                         ],
+                       ),
                         SizedBox(height: screenUtil.setHeight(10)),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,

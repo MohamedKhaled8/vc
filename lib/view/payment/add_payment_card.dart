@@ -43,31 +43,31 @@ class AddPaymentCard extends StatelessWidget {
               child: SingleChildScrollView(
                 child: Padding(
                   padding: const EdgeInsets.all(12.0),
-                  child: Column(
-                    children: [
-                      CustomTextFormField(text: '0000 0000 0000 0000',icon: Icon(Icons.payment_outlined)),
-                      SizedBox(height: screenUtil.setHeight(20),),
-                      CustomTextFormField(text: 'Cardholder name'),
-                      SizedBox(height: screenUtil.setHeight(20),),
-                       Row(
-                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Expanded(
-                              child: SizedBox(
-                                width: size.width/2,
-                                  child: CustomTextFormField(text: 'MM / YY')),
-                            ),
-                            SizedBox(width: screenUtil.setWidth(10),),
-                            Expanded(
-                              child: SizedBox(
-                                  width: size.width/2,
-                                  child: CustomTextFormField(text: 'cvc / cvv')),
-                            ),
-
-                          ],
-                      ),
-                    ],
-                  ),
+                  // child: Column(
+                  //   children: [
+                  //     CustomTextFormField(text: '0000 0000 0000 0000',icon: Icon(Icons.payment_outlined)),
+                  //     SizedBox(height: screenUtil.setHeight(20),),
+                  //     CustomTextFormField(text: 'Cardholder name'),
+                  //     SizedBox(height: screenUtil.setHeight(20),),
+                  //      Row(
+                  //        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  //         children: [
+                  //           Expanded(
+                  //             child: SizedBox(
+                  //               width: size.width/2,
+                  //                 child: CustomTextFormField(text: 'MM / YY')),
+                  //           ),
+                  //           SizedBox(width: screenUtil.setWidth(10),),
+                  //           Expanded(
+                  //             child: SizedBox(
+                  //                 width: size.width/2,
+                  //                 child: CustomTextFormField(text: 'cvc / cvv')),
+                  //           ),
+                  //
+                  //         ],
+                  //     ),
+                  //   ],
+                  // ),
                 ),
               ),
             ),
