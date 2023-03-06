@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:vc/view/payment/checkout_screen.dart';
+import 'package:vc/widgets/container_shadow.dart';
 import 'package:vc/widgets/custom_appbar_two.dart';
 import 'package:vc/widgets/custom_text_next_button.dart';
 
@@ -20,16 +21,7 @@ class PaymentMethodScreen extends StatelessWidget {
           Expanded(child: Container(
             height: 120,
             width: size.width-40,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                color: Colors.white,
-                boxShadow: [BoxShadow(
-                  color: Colors.grey.withOpacity(0.5),
-                  offset:const Offset(0, 3),
-                  spreadRadius: 3,
-                  blurRadius: 5,
-                )]
-            ),
+            decoration:buildShadowContainer(borderRadius: BorderRadius.circular(20)),
             child: Center(child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -52,13 +44,15 @@ class PaymentMethodScreen extends StatelessWidget {
                   blurRadius: 5,
                 )]
             ),
-            child: Center(child: Column(
+            child: Center(child:
+            Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 IconButton(onPressed: (){}, icon: Icon(Icons.payments,color: Colors.blue,size: 30,),),
                 Text('Receipt ',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),)
               ],
-            ),),
+            ),
+            ),
           )),
           SizedBox(height: screenUtil.setHeight(100),),
           CustomTextNextButton(onTap: (){Get.to(()=>const CheckoutScreen());}),

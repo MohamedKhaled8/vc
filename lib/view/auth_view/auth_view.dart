@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:vc/view/auth_view/signup_view.dart';
+import 'package:vc/view/home_view/bottom_nav_bar.dart';
 import 'package:vc/view/onboarding_screen_view/onboarding_screen.dart';
 
 import '../../theme/constant/const_colors.dart';
@@ -34,7 +35,7 @@ class AuthAppView extends StatelessWidget {
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10))),
                     onPressed: () {
-                      Get.to(()=>HomeView());
+                      Get.to(()=>BottomNavBar());
                     },
                     child: const Text(
                       "Skip",
@@ -63,7 +64,7 @@ class AuthAppView extends StatelessWidget {
           ),
           Expanded(
             child: CustomButtonTWo(
-              ontap: (){
+              onTap: (){
                 Get.to( SignUpView());
               },
               screenUtil: screenUtil,
@@ -77,7 +78,7 @@ class AuthAppView extends StatelessWidget {
           ),
           Expanded(
             child: CustomButtonTWo(
-              ontap: (){
+              onTap: (){
                 Get.to( LoginView());
               },
               screenUtil: screenUtil,

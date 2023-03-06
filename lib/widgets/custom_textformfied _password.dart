@@ -56,7 +56,7 @@ class CustomTextFormFieldPassword extends StatelessWidget {
             borderRadius: BorderRadius.circular(10),
             borderSide: const BorderSide(width: 1, color: Colors.red),
           ),
-          contentPadding: const EdgeInsets.fromLTRB(22, 18, 22, 18),
+          contentPadding: const EdgeInsets.symmetric(horizontal: 20,vertical: 0),
           hintText: text,
           hintStyle: const TextStyle(fontSize: 14 , fontWeight: FontWeight.bold),
           fillColor: Colors.white,

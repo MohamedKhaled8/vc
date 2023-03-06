@@ -77,7 +77,7 @@ ScreenUtil screenUtil = ScreenUtil();
                         height: screenUtil.setHeight(40),
                       ),
                              CustomButtonTWo(
-                            ontap: () {
+                            onTap: () {
                               if(formKey.currentState!.validate()){
                               Get.to(()=>CodeConfirmView());
                             }},

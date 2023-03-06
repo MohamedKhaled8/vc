@@ -4,27 +4,27 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // ignore: camel_case_types
 class CustomButtonTWo extends StatelessWidget {
-  const CustomButtonTWo({
+   CustomButtonTWo({
     Key? key,
     required this.screenUtil,
     required this.color,
     required this.color1,
     required this.txt,
-     this.ontap,
+     this.onTap,
   }) : super(key: key);
 
   final ScreenUtil screenUtil;
   final Color color;
   final Color color1;
   final String txt;
-  final Function()? ontap;
+   Function()?  onTap;
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: ontap,
+      onTap: onTap,
       child: Container(
           height: screenUtil.setHeight(48),
-          width: screenUtil.setWidth(326),
+          width: double.infinity,
           decoration: BoxDecoration(
             color: color,
             borderRadius: BorderRadius.circular(5),

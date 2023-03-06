@@ -116,7 +116,7 @@ class SignUpView extends StatelessWidget {
                         ),
                         SizedBox(height: screenUtil.setHeight(20)),
                         CustomButtonTWo(
-                          ontap: () {
+                          onTap: () {
                             if(formKey.currentState!.validate()){
                               Get.to(()=>SignUpView());
                             }

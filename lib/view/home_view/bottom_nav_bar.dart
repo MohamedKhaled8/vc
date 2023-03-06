@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:vc/theme/constant/const_colors.dart';
 import 'package:vc/view/home_view/home.dart';
-import 'package:vc/view/home_view/user_profile.dart';
+import 'package:vc/view/home_view/user_profile/user_profile.dart';
 
 import 'messages.dart';
 import 'review_screen.dart';

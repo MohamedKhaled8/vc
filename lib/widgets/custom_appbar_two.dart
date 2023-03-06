@@ -24,7 +24,7 @@ class CustomAppBarTwo extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children:  [
           ArrowBackIcon(color: Colors.white,ontap: (){Get.back();}),
-           Text(text,style: const TextStyle(color: Colors.white,fontSize: 20),),
+           Text(text,style: const TextStyle(color: Colors.white,fontSize: 22,fontWeight: FontWeight.normal),),
           const SizedBox(),
           SizedBox(width: screenUtil.setWidth(10),),
           // CustomTextNextButton(),

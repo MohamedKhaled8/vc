@@ -3,6 +3,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:vc/view/auth_view/auth_view.dart';
 import 'package:vc/view/home_view/home.dart';
+import 'package:vc/view/home_view/user_profile/profile_setting_screen.dart';
+import 'package:vc/view/home_view/user_profile/user_profile.dart';
+import 'package:vc/view/payment/test.dart';
 import 'package:vc/view/spalsh_view/splash_screen_view.dart';
 main() async {
   // WidgetsFlutterBinding.ensureInitialized();
@@ -24,7 +27,7 @@ class MyApp extends StatelessWidget {
           return   GetMaterialApp(
             title: 'Value Cleaning',
             debugShowCheckedModeBanner: false,
-            home: AuthAppView(),
+            home: ProfileSettingScreen(),
           );
         });
   }

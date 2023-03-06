@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:vc/view/auth_view/signup_view.dart';
-import 'package:vc/view/home_view/home.dart';
+import 'package:vc/view/home_view/bottom_nav_bar.dart';
 import 'package:vc/widgets/custom_buttom.dart';
-
 import '../../theme/constant/const_colors.dart';
 import '../../widgets/arrow_back_icons.dart';
 import '../../widgets/custom_textform_field.dart';
@@ -67,7 +65,7 @@ class CodeConfirmView extends StatelessWidget {
                       ),
                       CustomButtom(text: 'Confirm', color: ColorApp.primary, screenUtil: screenUtil,color1: Colors.white,ontap: (){
                         if(formKey.currentState!.validate()){
-                          Get.to(()=>HomeView());
+                          Get.to(()=>const BottomNavBar());
                         }
                       },),
                       SizedBox(

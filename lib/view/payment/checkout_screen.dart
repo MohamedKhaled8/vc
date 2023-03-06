@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:vc/theme/extensions/extensions.dart';
 import 'package:vc/view/payment/order_details_screen.dart';
 import 'package:vc/widgets/main_button.dart';
 import '../../theme/constant/const_colors.dart';
@@ -91,7 +92,7 @@ class CheckoutScreen extends StatelessWidget {
                         ),
                       ),
                       CustomButtonTWo(
-                        ontap: () {},
+                        onTap: () {},
                         screenUtil: screenUtil,
                         txt: 'Change Card',
                         color: Colors.grey.withOpacity(0.3),
@@ -123,10 +124,14 @@ class CheckoutScreen extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 5),
                 child: Row(
                   children: [
-                    CircleAvatar(
-                      radius: 15,
-                      backgroundColor: ColorApp.primary,
-                      child: Icon(Icons.add),
+                    Container(
+                      height: 30,
+                      width:30,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        border: Border.all(color: ColorApp.primary),
+                      ),
+                      child: Center(child: Icon(Icons.add,color: ColorApp.primary,)),
                     ),
                     SizedBox(
                       width: screenUtil.setWidth(10),
@@ -141,9 +146,7 @@ class CheckoutScreen extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(
-            height: screenUtil.setHeight(10),
-          ),
+          10.ph,
           Expanded(
               child: Container(
             height: 130,
@@ -387,7 +390,7 @@ class CheckoutScreen extends StatelessWidget {
                   screenUtil: screenUtil,
                   color: ColorApp.primary,
                   color1: Colors.white,
-                  txt: 'Payment confirmation',ontap: (){Get.to(()=>OrderDetailsScreen());},),
+                  txt: 'Payment confirmation',onTap: (){Get.to(()=>OrderDetailsScreen());},),
             ),
           ),
         ],

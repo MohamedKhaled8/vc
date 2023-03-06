@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:vc/theme/constant/const_colors.dart';
 import 'package:vc/view/auth_view/auth_view.dart';
-import 'package:vc/view/home_view/home.dart';
+import 'package:vc/view/home_view/bottom_nav_bar.dart';
 import '../../controller/auth_controller.dart';
 import '../../widgets/arrow_back_icons.dart';
 import '../../widgets/checkbox.dart';
@@ -109,9 +109,9 @@ class LoginView extends StatelessWidget {
                             }),
                                   SizedBox(height: screenUtil.setHeight(20)),
                            CustomButtonTWo(
-                            ontap: () {
+                            onTap: () {
                               if(formKey.currentState!.validate()){
-                                Get.to(()=>HomeView());
+                                Get.to(()=>BottomNavBar());
                               }
                             },
                             screenUtil: screenUtil,
