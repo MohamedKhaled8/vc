@@ -54,7 +54,8 @@ class ProfileSettingScreen extends StatelessWidget {
 
                       ),
                          // child: controller.image != null?Image.file(controller.image!): Image.asset('assets/images/jpeg/mohamed.jpeg'),
-                      )),
+                      ),
+                  ),
                      GetBuilder<ProfileController>(builder: (_){
                        return Positioned(
                          bottom: -51,
@@ -63,19 +64,7 @@ class ProfileSettingScreen extends StatelessWidget {
                              controller.pickImage();
                            },
                            child: Container(
-                             height: 25,width: 35,decoration: BoxDecoration(
-                             shape: BoxShape.rectangle,
-                             color: Colors.grey,
-                             borderRadius: BorderRadius.circular(10),
-                             boxShadow: [
-                               BoxShadow(
-                                 spreadRadius: 3,
-                                 blurRadius: 3,
-                                 color: Colors.grey.withOpacity(0.5),
-                                 offset: const Offset(0, 3),
-                               ),
-                             ],
-                           ),
+                             height: 25,width: 35,decoration: buildShadowContainer(borderRadius: BorderRadius.circular(10)),
                              child: const Center(child: Icon(Icons.person),),),
                          ),
                        );
@@ -92,18 +81,7 @@ class ProfileSettingScreen extends StatelessWidget {
                     10.ph,
                     Container(
                       height: size.height/2-94,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(20),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey.withOpacity(0.5),
-                            blurRadius: 3,
-                            spreadRadius: 3,
-                            offset: const Offset(0, 3),
-                          ),
-                        ],
-                      ),
+                      decoration: buildShadowContainer(borderRadius: BorderRadius.circular(20)),
                       child:  Padding(
                         padding: const EdgeInsets.all(12.0),
                         child: Form(

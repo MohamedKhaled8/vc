@@ -1,0 +1,16 @@
+import 'package:flutter/material.dart';
+
+class RateExperienceScreen extends StatelessWidget {
+  const RateExperienceScreen({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return  Scaffold(
+      body: Column(
+        children: [
+
+        ],
+      ),
+    );
+  }
+}
