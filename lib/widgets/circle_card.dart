@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vc/theme/extensions/extensions.dart';
 
 class CircleCard extends StatelessWidget {
   const CircleCard({
@@ -39,9 +40,7 @@ class CircleCard extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(
-            width: screenUtil.setWidth(10),
-          ),
+         10.pw,
           Column(
             children: [
               InkWell(

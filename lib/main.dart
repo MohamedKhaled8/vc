@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:vc/view/rating/rate_experiance_screen.dart';
 
 import 'package:vc/view/spalsh_view/splash_screen_view.dart';
 
@@ -21,10 +22,10 @@ class MyApp extends StatelessWidget {
         splitScreenMode: true,
         designSize: const Size(393, 852),
         builder: (context, child) {
-          return   const GetMaterialApp(
+          return    GetMaterialApp(
             title: 'Value Cleaning',
             debugShowCheckedModeBanner: false,
-            home: SplashScreen(),
+            home: RateExperienceScreen(),
           );
         });
   }

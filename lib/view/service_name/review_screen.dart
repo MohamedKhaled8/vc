@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import 'package:vc/widgets/custom_appbar_two.dart';
 
 import '../../controller/myController.dart';
-import '../../theme/constant/const_colors.dart';
 import 'card_detailes_view.dart';
 
 class ReviewScreen extends StatelessWidget {
