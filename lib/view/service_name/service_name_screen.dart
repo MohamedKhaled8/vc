@@ -35,7 +35,7 @@ class ServiceNameScreen extends StatelessWidget {
               height: screenUtil.setHeight(300),
               decoration: const BoxDecoration(
                   image: DecorationImage(
-                image: AssetImage("assets/images/png/background.png"),
+                image: AssetImage("assets/icons/backg1.jpg"),
                 fit: BoxFit.cover,
               )),
             ),
@@ -44,9 +44,10 @@ class ServiceNameScreen extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 40),
             child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
+                children:  [
                   ArrowBackIcon(
                     color: Colors.white,
+                    ontap: (){Get.back();},
                   ),
                   Icon(Icons.favorite,color: Colors.white,size: 30,),
                 ],

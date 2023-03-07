@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:vc/widgets/custom_appbar_two.dart';
 
 class MessagesView extends StatelessWidget {
   const MessagesView({super.key});
@@ -8,7 +8,11 @@ class MessagesView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(child: Text("Messages")),
+      body: Column(
+        children: [
+          CustomAppBarOne(110, text: 'Chat'),
+        ],
+      )
     );
   }
 }

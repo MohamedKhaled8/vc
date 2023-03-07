@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:vc/theme/extensions/extensions.dart';
 import 'package:vc/view/auth_view/auth_view.dart';
-import 'package:vc/view/home_view/user_profile/profile_setting_screen.dart';
+import 'package:vc/view/user_profile/profile_setting_screen.dart';
 import 'package:vc/widgets/container_shadow.dart';
 import 'package:vc/widgets/custom_appbar_two.dart';
 import '../../../theme/constant/const_colors.dart';
-import '../../payment/payment_setting_screen.dart';
+import '../payment/payment_setting_screen.dart';
 
 class UserProfile extends StatelessWidget {
   const UserProfile({super.key});
@@ -21,7 +21,7 @@ class UserProfile extends StatelessWidget {
             clipBehavior: Clip.none,
             alignment: Alignment.bottomCenter,
             children: [
-              CustomAppBarOne(160, text: 'Profile Setting '),
+              CustomAppBarOne(160, text: 'User Profile'),
               Positioned(
                   bottom: -50,
                   child: Container(
@@ -73,16 +73,20 @@ class UserProfile extends StatelessWidget {
                     padding: const EdgeInsets.all(8.0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: const [
+                      children:  [
                         Text(
                           'Favorite List',
                           style: TextStyle(
                               fontSize: 18, fontWeight: FontWeight.normal),
                         ),
-                        Icon(
-                          Icons.favorite,
-                          color: Colors.red,
-                          size: 40,
+                        Container(
+                          width: 40,
+                          height: 40,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage('assets/icons/b4.png'),
+                            )
+                          ),
                         ),
                       ],
                     ),
@@ -120,10 +124,14 @@ class UserProfile extends StatelessWidget {
                             ],
                           ),
                           20.pw,
-                          const Icon(
-                            Icons.payment_outlined,
-                            color: Colors.blue,
-                            size: 40,
+                          Container(
+                            width: 40,
+                            height: 40,
+                            decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage('assets/icons/payment1.png'),
+                                )
+                            ),
                           ),
                         ],
                       ),

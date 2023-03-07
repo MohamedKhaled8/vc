@@ -1,3 +1,4 @@
+import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -83,17 +84,24 @@ class SamplesScreen extends StatelessWidget {
                                   border: Border.all(color: Colors.black,width: 1,style: BorderStyle.none),
                                 ),
                                 child:controller.image != null?Image.file(controller.image!,height: 150,fit: BoxFit.cover,):
-                                Container(
-                                  height: 150,
-                                  width: size.width/2-20,
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(20),
-                                    border: Border.all(color: Colors.black,width: 1,style: BorderStyle.solid),
+                                DottedBorder(
+                                  borderType: BorderType.RRect,
+                                  radius: Radius.circular(20),
+                                  padding: EdgeInsets.all(10),
+                                  strokeWidth: 2,
+                                  color: ColorApp.grey,
+                                  dashPattern: [8, 8, 8, 8],
+                                  child: Container(
+                                    height: 150,
+                                    width: size.width/2-20,
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(20),
+                                    ),
+                                    child: Center(child: IconButton(onPressed: (){
+                                      controller.pickImage();
+                                    }, icon: const Icon(Icons.add,size: 25,)),),
                                   ),
-                                  child: Center(child: IconButton(onPressed: (){
-                                    controller.pickImage();
-                                  }, icon: const Icon(Icons.add,size: 25,)),),
                                 ),
                               );
                             }),

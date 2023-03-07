@@ -21,12 +21,72 @@ class PaymentSettingScreen extends StatelessWidget {
           buildContainerItem(context,color:  [
             const Color(0xFF0099D6),
             const Color(0xFF017BAB),
-          ],child:Column() ),
+          ],child:Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text('Change Card',style: TextStyle(fontSize: 18,color: Colors.white),),
+                    Container(
+                      height: screenUtil.setHeight(30),
+                      width: screenUtil.setWidth(30),
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          shape: BoxShape.circle
+                      ),
+                    ),
+
+                  ],
+                ),
+                35.ph,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text('•••• •••• •••• 3333',style: TextStyle(fontSize: 14,color: Colors.white),),
+                    Text('07/24',style: TextStyle(fontSize: 14,color: Colors.white),),
+                  ],
+                ),
+
+              ],
+            ),
+          ), ),
           20.ph,
           buildContainerItem(context,color: [
             const Color(0xffF2A91B),
             const Color(0xffBC6907),
-          ],child: Column()),
+          ],child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text('Change Card',style: TextStyle(fontSize: 18,color: Colors.white),),
+                    Container(
+                      height: screenUtil.setHeight(30),
+                      width: screenUtil.setWidth(30),
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          shape: BoxShape.circle
+                      ),
+                    ),
+
+                  ],
+                ),
+                35.ph,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text('•••• •••• •••• 3333',style: TextStyle(fontSize: 14,color: Colors.white),),
+                    Text('07/24',style: TextStyle(fontSize: 14,color: Colors.white),),
+                  ],
+                ),
+
+              ],
+            ),
+          ),),
           10.ph,
         ],
       ),

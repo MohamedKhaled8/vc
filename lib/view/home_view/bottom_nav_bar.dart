@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:vc/theme/constant/const_colors.dart';
 import 'package:vc/view/home_view/home.dart';
-import 'package:vc/view/home_view/user_profile/user_profile.dart';
-import 'package:vc/view/service_form/service_form_screen.dart';
-import 'package:vc/view/service_name/service_name_screen.dart';
 
-import 'messages.dart';
-import '../service_name/review_screen.dart';
+import '../messages/messages.dart';
+import '../order_histroy/order_history_screen.dart';
+import '../user_profile/user_profile.dart';
 
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});
@@ -28,8 +26,8 @@ class _BottomNavBarState extends State<BottomNavBar>
 
   List<Widget> myPages =  [
     HomeView(),
+    OrderHistoryScreen(),
     MessagesView(),
-    ServiceNameScreen(),
     UserProfile(),
   ];
 

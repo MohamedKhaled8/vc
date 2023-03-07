@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:vc/theme/extensions/extensions.dart';
+import 'package:vc/view/samples/samples_screen.dart';
+import 'package:vc/view/service_form/service_form_screen.dart';
+import 'package:vc/view/service_name/service_name_screen.dart';
 
 class CircleCard extends StatelessWidget {
   const CircleCard({
@@ -14,14 +18,16 @@ class CircleCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Column(
-            children: [
-              InkWell(
-                onTap: () {},
-                child: Container(
+      child: InkWell(
+        onTap: () {
+          Get.to(()=>ServiceNameScreen());
+        },
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Column(
+              children: [
+                Container(
                   height: screenUtil.setHeight(70),
                   width: screenUtil.setWidth(70),
                   decoration: BoxDecoration(
@@ -33,19 +39,16 @@ class CircleCard extends StatelessWidget {
                             "assets/icons/deep cleaning.png"),
                       )),
                 ),
-              ),
-              const Text(
-                "deep cleaning ",
-                style: TextStyle(fontSize: 14),
-              ),
-            ],
-          ),
-         10.pw,
-          Column(
-            children: [
-              InkWell(
-                onTap: () {},
-                child: Container(
+                const Text(
+                  "deep cleaning ",
+                  style: TextStyle(fontSize: 14),
+                ),
+              ],
+            ),
+           10.pw,
+            Column(
+              children: [
+                Container(
                   height: screenUtil.setHeight(70),
                   width: screenUtil.setWidth(70),
                   decoration: BoxDecoration(
@@ -57,21 +60,18 @@ class CircleCard extends StatelessWidget {
                             "assets/icons/car cleaning.png"),
                       )),
                 ),
-              ),
-              const Text(
-                "car cleaning ",
-                style: TextStyle(fontSize: 14),
-              ),
-            ],
-          ),
-          SizedBox(
-            width: screenUtil.setWidth(10),
-          ),
-          Column(
-            children: [
-              InkWell(
-                onTap: () {},
-                child: Container(
+                const Text(
+                  "car cleaning ",
+                  style: TextStyle(fontSize: 14),
+                ),
+              ],
+            ),
+            SizedBox(
+              width: screenUtil.setWidth(10),
+            ),
+            Column(
+              children: [
+                Container(
                   height: screenUtil.setHeight(70),
                   width: screenUtil.setWidth(70),
                   decoration: BoxDecoration(
@@ -83,21 +83,18 @@ class CircleCard extends StatelessWidget {
                             "assets/icons/painting.png"),
                       )),
                 ),
-              ),
-              const Text(
-                "painting ",
-                style: TextStyle(fontSize: 14),
-              ),
-            ],
-          ),
-          SizedBox(
-            width: screenUtil.setWidth(10),
-          ),
-          Column(
-            children: [
-              InkWell(
-                onTap: () {},
-                child: Container(
+                const Text(
+                  "painting ",
+                  style: TextStyle(fontSize: 14),
+                ),
+              ],
+            ),
+            SizedBox(
+              width: screenUtil.setWidth(10),
+            ),
+            Column(
+              children: [
+                Container(
                   height: screenUtil.setHeight(70),
                   width: screenUtil.setWidth(70),
                   decoration: BoxDecoration(
@@ -109,23 +106,20 @@ class CircleCard extends StatelessWidget {
                             "assets/icons/dish washing.png"),
                       )),
                 ),
-              ),
-              const Text(
-                "dish washing ",
-                style: TextStyle(fontSize: 14),
-              ),
-            ],
-          ),
-          SizedBox(
-            width: screenUtil.setWidth(10),
-          ),
-         
-         
-          Column(
-            children: [
-              InkWell(
-                onTap: () {},
-                child: Container(
+                const Text(
+                  "dish washing ",
+                  style: TextStyle(fontSize: 14),
+                ),
+              ],
+            ),
+            SizedBox(
+              width: screenUtil.setWidth(10),
+            ),
+
+
+            Column(
+              children: [
+                Container(
                   height: screenUtil.setHeight(70),
                   width: screenUtil.setWidth(70),
                   decoration: BoxDecoration(
@@ -137,21 +131,18 @@ class CircleCard extends StatelessWidget {
                             "assets/icons/deep cleaning.png"),
                       )),
                 ),
-              ),
-              const Text(
-                "deep cleaning ",
-                style: TextStyle(fontSize: 14),
-              ),
-            ],
-          ),
-           SizedBox(
-            width: screenUtil.setWidth(10),
-          ),
-             Column(
-            children: [
-              InkWell(
-                onTap: () {},
-                child: Container(
+                const Text(
+                  "deep cleaning ",
+                  style: TextStyle(fontSize: 14),
+                ),
+              ],
+            ),
+             SizedBox(
+              width: screenUtil.setWidth(10),
+            ),
+               Column(
+              children: [
+                Container(
                   height: screenUtil.setHeight(70),
                   width: screenUtil.setWidth(70),
                   decoration: BoxDecoration(
@@ -163,14 +154,14 @@ class CircleCard extends StatelessWidget {
                             "assets/icons/car cleaning.png"),
                       )),
                 ),
-              ),
-              const Text(
-                "car cleaning ",
-                style: TextStyle(fontSize: 14),
-              ),
-            ],
-          ),
-        ],
+                const Text(
+                  "car cleaning ",
+                  style: TextStyle(fontSize: 14),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
