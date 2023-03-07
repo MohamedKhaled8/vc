@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vc/theme/extensions/extensions.dart';
+import 'package:vc/widgets/container_shadow.dart';
 
 import '../../theme/constant/const_colors.dart';
 import '../../widgets/custom_appbar_two.dart';
@@ -20,133 +22,110 @@ class OrderDetailsScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          CustomAppBarTwo(110, text: 'Order Details'),
-          SizedBox(height: screenUtil.setHeight(30),),
+          CustomAppBarOne(110, text: 'Order Details'),
+          30.ph,
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),
             child: Container(
-              height: size.height/2+90,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(20),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.5),
-                    blurRadius: 3,
-                    spreadRadius: 3,
-                    offset: Offset(0, 3),
+              height: size.height/2+45,
+              decoration:buildShadowContainer(borderRadius: BorderRadius.circular(20)),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                                'Order code',
+                                style:TextStyle(
+                                    color: ColorApp.primary,
+                                    fontWeight: FontWeight.w500,
+                                    fontStyle: FontStyle.normal,
+                                    fontSize: 20.0),
+                                textAlign: TextAlign.center),
+                            Text(
+                                '10805128',
+                                style:TextStyle(
+                                    color: ColorApp.primary,
+                                    fontWeight: FontWeight.w500,
+                                    fontStyle: FontStyle.normal,
+                                    fontSize: 20.0),
+                                textAlign: TextAlign.center),
+                          ],
+                        ),
+                        10.ph,
+                        buildRowItem('Service name', 'Service name'),
+                        10.ph,
+                        buildRowItem('Date :', 'September 21, 2023'),
+                        10.ph,
+                        buildRowItem('time :', '01:30 pm'),
+                        10.ph,
+                        Column(
+                          children: [
+                            buildRowItem('Address',''),
+                            buildRowItem('', '95, Opposite Arjun College, Kairav Plot,Township'),
+                            buildRowItem('', 'No.21'),
+                          ],
+                        ),
+                        10.ph,
+                        buildRowItem('Repeat', 'weekly'),
+                        10.ph,
+                        buildRowItem('Rooms', '2 room'),
+                        10.ph,
+                        buildRowItem('Bathroom', '1 Bathroom'),
+                        10.ph,
+                        buildRowItem('Kitchen', '3 Kitchen'),
+                        10.ph,
+                        buildRowItem('Extra Service', 'Window , dish washing , Cooking'),
+                        10.ph,
+                        buildRowItem('Workers', '5 Workers'),
+                        10.ph,
+                      ],
+                    ),
+                  ),
+                  Expanded(
+                    child: Row(
+                      children: [
+                        Expanded(
+                            child:Container(
+                              height: 40,
+                              decoration: BoxDecoration(
+                                  color: ColorApp.primary,borderRadius: BorderRadius.only(bottomLeft: Radius.circular(20),bottomRight: Radius.circular(20),)
+                              ),
+                              child:
+                              Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: Row(
+                                  mainAxisAlignment:
+                                  MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text('Total',
+                                        style: TextStyle(
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.w500,
+                                            fontStyle: FontStyle.normal,
+                                            fontSize: 20.0),
+                                        textAlign: TextAlign.center),
+                                    Text('260\$',
+                                        style: TextStyle(
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.w500,
+                                            fontStyle: FontStyle.normal,
+                                            fontSize: 18.0),
+                                        textAlign: TextAlign.center),
+                                  ],
+                                ),
+                              ),
+                            )),
+                      ],
+                    ),
                   ),
                 ],
               ),
-              child: Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                            'Order code',
-                            style:TextStyle(
-                                color: ColorApp.primary,
-                                fontWeight: FontWeight.w500,
-                                fontStyle: FontStyle.normal,
-                                fontSize: 20.0),
-                            textAlign: TextAlign.center),
-                        Text(
-                            '10805128',
-                            style:TextStyle(
-                                color: ColorApp.primary,
-                                fontWeight: FontWeight.w500,
-                                fontStyle: FontStyle.normal,
-                                fontSize: 20.0),
-                            textAlign: TextAlign.center),
-                      ],
-                    ),
-                    SizedBox(
-                      height: screenUtil.setHeight(10),
-                    ),
-                    buildRowItem('Service name', 'Service name'),
-                    SizedBox(
-                      height: screenUtil.setHeight(10),
-                    ),
-                    buildRowItem('Date :', 'September 21, 2023'),
-                    SizedBox(
-                      height: screenUtil.setHeight(10),
-                    ),
-                    buildRowItem('time :', '01:30 pm'),
-                    SizedBox(
-                      height: screenUtil.setHeight(10),
-                    ),
-                    Column(
-                      children: [
-                        buildRowItem('Address',''),
-                        buildRowItem('', '95, Opposite Arjun College, Kairav Plot,Township'),
-                        buildRowItem('', 'No.21'),
-                      ],
-                    ),
-                    SizedBox(
-                      height: screenUtil.setHeight(10),
-                    ),
-                    buildRowItem('Repeat', 'weekly'),
-                    SizedBox(
-                      height: screenUtil.setHeight(10),
-                    ),
-                    buildRowItem('Rooms', '2 room'),
-                    SizedBox(
-                      height: screenUtil.setHeight(10),
-                    ),
-                    buildRowItem('Bathroom', '1 Bathroom'),
-                    SizedBox(
-                      height: screenUtil.setHeight(10),
-                    ),
-                    buildRowItem('Kitchen', '3 Kitchen'),
-                    SizedBox(
-                      height: screenUtil.setHeight(10),
-                    ),
-                    buildRowItem('Extra Service', 'Window , dish washing , Cooking'),
-                    SizedBox(
-                      height: screenUtil.setHeight(10),
-                    ),
-                    buildRowItem('Workers', '5 Workers'),
-                    SizedBox(
-                      height: screenUtil.setHeight(15),
-                    ),
-                    Expanded(
-                      child: Row(
-                        children: [
-                          Expanded(child: MainButton(text: 'See All Details', color: ColorApp.primary, screenUtil: screenUtil,child: Padding(
-                            padding: const EdgeInsets.all(10.0),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                    'Total',
-                                    style:TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.w500,
-                                        fontStyle: FontStyle.normal,
-                                        fontSize: 20.0),
-                                    textAlign: TextAlign.center),
-                                Text(
-                                    '260\$',
-                                    style:TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.w500,
-                                        fontStyle: FontStyle.normal,
-                                        fontSize: 18.0),
-                                    textAlign: TextAlign.center),
-                              ],
-                            ),
-                          ),))
-
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-            ),
           ),
           ),
           const Expanded(child: SizedBox()),
@@ -180,11 +159,8 @@ class OrderDetailsScreen extends StatelessWidget {
           children: [
             Text(
               txt1,
-              style: const TextStyle(fontSize: 18,color: Colors.grey),
+              style: const TextStyle(fontSize: 14,color: Colors.grey),
             ),
-            // SizedBox(
-            //   height: screenUtil.setHeight(10),
-            // ),
             Spacer(),
             Text(
               txt2,

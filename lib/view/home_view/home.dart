@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vc/model/model_card.dart';
-import 'package:vc/view/home_view/bottom_nav_bar.dart';
 import '../../widgets/Card_view.dart';
 import '../../widgets/action_card.dart';
 import '../../widgets/circle_card.dart';

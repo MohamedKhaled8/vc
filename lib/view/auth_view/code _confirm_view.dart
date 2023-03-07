@@ -20,12 +20,14 @@ class CodeConfirmView extends StatelessWidget {
     return Scaffold(
         body: SingleChildScrollView(
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-           ArrowBackIcon(
-            ontap: () {
-              Get.to(ForgotPasswordView());
-            },
-           ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 25,vertical: 40),
+            child: ArrowBackIcon(ontap: () {
+              Get.to( ForgotPasswordView());
+            },),
+          ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 80),
             child: Center(

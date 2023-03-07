@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:syncfusion_flutter_sliders/sliders.dart';
+import 'package:vc/theme/extensions/extensions.dart';
+import 'package:vc/view/samples/samples_screen.dart';
+import 'package:vc/widgets/container_shadow.dart';
 import 'package:vc/widgets/custom_app_bar.dart';
 import 'package:vc/widgets/custom_buttom.dart';
 import 'package:vc/widgets/custom_text_next_button.dart';
@@ -31,7 +34,7 @@ class _ServiceFormScreenState extends State<ServiceFormScreen> {
             children: [
               CustomAppbar(),
               Positioned (
-                 top: 180,
+                 top: 150,
                  child: Column(
                    children: [
                      Container(
@@ -64,26 +67,15 @@ class _ServiceFormScreenState extends State<ServiceFormScreen> {
                                });
                              },
                            ),
-                           SizedBox(height: screenUtil.setHeight(15),),
+                           10.ph,
                            const Text('Date and Time',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
-                           SizedBox(height: screenUtil.setHeight(10),),
+                           5.ph,
                            Row(
                              children: [
                                Expanded(child: Container(
-                                 height: screenUtil.setHeight(55),
+                                 height: screenUtil.setHeight(40),
                                  width: size.width/2,
-                                 decoration: BoxDecoration(
-                                     color: Colors.white,
-                                     borderRadius: BorderRadius.circular(10),
-                                     boxShadow: [
-                                       BoxShadow(
-                                         color: Colors.grey.withOpacity(0.5),
-                                         spreadRadius: 3,
-                                         blurRadius: 5,
-                                         offset: const Offset(
-                                             0, 3), // changes position of shadow
-                                       ),
-                                     ]),
+                                 decoration: buildShadowContainer(borderRadius: BorderRadius.circular(10)),
                                  child: Row(
                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                    children: [
@@ -95,19 +87,19 @@ class _ServiceFormScreenState extends State<ServiceFormScreen> {
                                          color: ColorApp.primary,
                                        ),
                                      ),
-                                     SizedBox(width: screenUtil.setWidth(10),),
+                                     10.pw,
                                      const Expanded(child: Text(
                                        "September 21, 2023",
                                        style: TextStyle(
-                                           fontSize: 16, fontWeight: FontWeight.normal),
+                                           fontSize: 12, fontWeight: FontWeight.normal),
                                      ),)
 
                                    ],
                                  ),
                                ),),
-                               SizedBox(width: screenUtil.setWidth(10),),
+                               10.pw,
                                Expanded(child: Container(
-                                 height: screenUtil.setHeight(55),
+                                 height: screenUtil.setHeight(40),
                                  width: size.width/2,
                                  decoration: BoxDecoration(
                                      color: Colors.white,
@@ -132,36 +124,24 @@ class _ServiceFormScreenState extends State<ServiceFormScreen> {
                                          color: ColorApp.primary,
                                        ),
                                      ),
-                                     SizedBox(width: screenUtil.setWidth(10),),
+                                     10.pw,
                                      const Expanded(child: Text(
                                        "04 : 35 pm",
                                        style: TextStyle(
-                                           fontSize: 16, fontWeight: FontWeight.normal),
+                                           fontSize: 12, fontWeight: FontWeight.normal),
                                      ),)
-
                                    ],
                                  ),
                                ),),
                              ],
                            ),
-                           SizedBox(height: screenUtil.setHeight(15),),
+                           15.ph,
                            const Text('Address',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
-                           SizedBox(height: screenUtil.setHeight(10),),
+                           10.ph,
                            Container(
                              height: screenUtil.setHeight(55),
                              width: size.width,
-                             decoration: BoxDecoration(
-                                 color: Colors.white,
-                                 borderRadius: BorderRadius.circular(10),
-                                 boxShadow: [
-                                   BoxShadow(
-                                     color: Colors.grey.withOpacity(0.5),
-                                     spreadRadius: 3,
-                                     blurRadius: 5,
-                                     offset: const Offset(
-                                         0, 3), // changes position of shadow
-                                   ),
-                                 ]),
+                             decoration:buildShadowContainer(borderRadius: BorderRadius.circular(10)),
                              child: Row(
                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                children: [
@@ -173,18 +153,18 @@ class _ServiceFormScreenState extends State<ServiceFormScreen> {
                                      color: ColorApp.primary,
                                    ),
                                  ),
-                                 SizedBox(width: screenUtil.setWidth(10),),
+                                 10.pw,
                                  const Expanded(child: Text(
                                    '95, Opposite Arjun College, Kairav Plot',
                                    style: TextStyle(
-                                       fontSize: 16, fontWeight: FontWeight.normal),
+                                       fontSize: 12, fontWeight: FontWeight.normal),
                                  ),),
                                ],
                              ),
                            ),
-                           SizedBox(height: screenUtil.setHeight(15),),
+                           10.ph,
                            const Text('Repeat',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
-                           SizedBox(height: screenUtil.setHeight(10),),
+                           10.ph,
                            Row(
                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                              children: [
@@ -195,9 +175,9 @@ class _ServiceFormScreenState extends State<ServiceFormScreen> {
                                Expanded(child:CustomButtom(text: 'Monthly', color: Colors.white, screenUtil: screenUtil,color1: ColorApp.primary,),),
                              ],
                            ),
-                            SizedBox(height: screenUtil.setHeight(15),),
+                            10.ph,
                            const Text('Extra Service',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
-                           SizedBox(height: screenUtil.setHeight(10),),
+                           10.ph,
                            Column(
                              children: [
                                Row(
@@ -221,8 +201,7 @@ class _ServiceFormScreenState extends State<ServiceFormScreen> {
                                ),
                              ],
                            ),
-                           SizedBox(height: screenUtil.setHeight(20),),
-                           CustomTextNextButton(),
+                           10.ph,
 
                          ]
                            ),
@@ -233,6 +212,7 @@ class _ServiceFormScreenState extends State<ServiceFormScreen> {
             ],
           ),
       ),
+      bottomNavigationBar: CustomTextNextButton(onTap: (){Get.to(()=>SamplesScreen());}),
     );
   }
 }

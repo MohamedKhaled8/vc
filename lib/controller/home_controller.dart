@@ -1,27 +1,20 @@
-// import 'package:flutter/material.dart';
-// import 'package:get/get.dart';
-// import 'package:vc/view/home_view/chat_view.dart';
-// import 'package:vc/view/home_view/home.dart';
-// import 'package:vc/view/home_view/review_screen.dart';
-// import 'package:vc/view/payment/payment_method_screen.dart';
-//
-// class HomeController extends GetxController{
-//   int currentIndex = 0;
-//
-//   void incIndex() {
-//     currentIndex++;
-//     update();
-//   }
-//
-//   void changeBottomNavBar(int index) {
-//     currentIndex = index;
-//     update();
-//   }
-//
-//   List<Widget> bottomScreens = [
-//     HomeView(),
-//     ReviewScreen(),
-//     ChatView(),
-//     PaymentMethodScreen(),
-//   ];
-// }
+import 'dart:io';
+import 'package:flutter/services.dart';
+import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
+
+class ProfileController extends GetxController{
+  File? image;
+  Future pickImage() async {
+    try{
+      final image = await ImagePicker().pickImage(source: ImageSource.gallery);
+      update();
+      if(image==null) return;
+      final imageTemporary = File(image.path);
+      this.image = imageTemporary;
+      update();
+    }on PlatformException catch(error){
+      print('Failed to pick image $error');
+    }
+  }
+}

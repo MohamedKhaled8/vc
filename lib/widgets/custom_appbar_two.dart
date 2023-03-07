@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:vc/widgets/custom_text_next_button.dart';
+import 'package:vc/theme/extensions/extensions.dart';
 import '../theme/constant/const_colors.dart';
 import 'arrow_back_icons.dart';
 
-class CustomAppBarTwo extends StatelessWidget {
+class CustomAppBarOne extends StatelessWidget {
   final String text;
   double height = 110;
-   CustomAppBarTwo(this.height,{Key? key, required this.text}) : super(key: key);
+   CustomAppBarOne(this.height,{Key? key, required this.text}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class CustomAppBarTwo extends StatelessWidget {
           ArrowBackIcon(color: Colors.white,ontap: (){Get.back();}),
            Text(text,style: const TextStyle(color: Colors.white,fontSize: 22,fontWeight: FontWeight.normal),),
           const SizedBox(),
-          SizedBox(width: screenUtil.setWidth(10),),
+          20.pw
           // CustomTextNextButton(),
         ],
       ),

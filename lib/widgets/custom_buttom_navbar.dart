@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:vc/view/home_view/review_screen.dart';
+import 'package:vc/view/service_form/service_form_screen.dart';
+import 'package:vc/view/service_name/review_screen.dart';
 
 import '../theme/constant/const_colors.dart';
 
@@ -72,7 +73,7 @@ class CustomButtomNavBar extends StatelessWidget {
                     
                     InkWell(
                       onTap: (){
-                        Get.to(()=>ReviewScreen());
+                        Get.to(()=>ServiceFormScreen());
                       },
                       child: const Text(
                         "Schedule",

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:vc/view/payment/payment_method_screen.dart';
 import 'package:vc/widgets/custom_text_next_button.dart';
 import '../../controller/myController.dart';
 import '../../theme/constant/const_colors.dart';
 import '../../widgets/custom_app_bar.dart';
-import '../../widgets/custom_buttom.dart';
 
 class SamplesScreen extends StatelessWidget {
    SamplesScreen({Key? key}) : super(key: key);
@@ -81,8 +81,6 @@ class SamplesScreen extends StatelessWidget {
                             ),
 
                             SizedBox(height: screenUtil.setHeight(20),),
-                            CustomTextNextButton(),
-
                           ]
                       ),
                     ),
@@ -91,6 +89,9 @@ class SamplesScreen extends StatelessWidget {
               ),
         ]
       ),
-    ));
+    ),
+        bottomNavigationBar: CustomTextNextButton(onTap: (){Get.to(()=>PaymentMethodScreen());}),
+
+    );
   }
 }

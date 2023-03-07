@@ -27,8 +27,14 @@ ScreenUtil screenUtil = ScreenUtil();
         child: Form(
           key: formKey,
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-               ArrowBackIcon(ontap: () => Get.to(()=> LoginView()),),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25,vertical: 40),
+                child: ArrowBackIcon(ontap: () {
+                  Get.to( LoginView());
+                },),
+              ),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 80),
                 child: Center(

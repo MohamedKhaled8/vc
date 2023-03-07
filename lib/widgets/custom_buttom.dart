@@ -43,7 +43,7 @@ final Function()? ontap;
                     color: color1,
                     fontWeight: FontWeight.w500,
                     fontStyle: FontStyle.normal,
-                    fontSize: 18.0),
+                    fontSize: 16.0),
                 textAlign: TextAlign.center),
           ), 
 

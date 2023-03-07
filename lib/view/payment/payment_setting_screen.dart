@@ -16,7 +16,7 @@ class PaymentSettingScreen extends StatelessWidget {
     return  Scaffold(
       body: Column(
         children: [
-          CustomAppBarTwo(110, text: 'Payment Settings'),
+          CustomAppBarOne(110, text: 'Payment Settings'),
           20.ph,
           buildContainerItem(context,color:  [
             const Color(0xFF0099D6),

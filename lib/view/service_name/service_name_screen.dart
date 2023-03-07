@@ -3,13 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:vc/theme/constant/const_colors.dart';
+import 'package:vc/theme/extensions/extensions.dart';
+import 'package:vc/view/service_name/review_screen.dart';
+import 'package:vc/widgets/container_shadow.dart';
 import '../../controller/myController.dart';
 import '../../widgets/arrow_back_icons.dart';
-import '../../widgets/card_detailes_view.dart';
+import 'card_detailes_view.dart';
 import '../../widgets/custom_buttom_navbar.dart';
 
-class DetailsView extends StatelessWidget {
-  DetailsView({
+class ServiceNameScreen extends StatelessWidget {
+  ServiceNameScreen({
     Key? key,
   }) : super(key: key);
   final controller = Get.put(MyController());
@@ -37,19 +40,20 @@ class DetailsView extends StatelessWidget {
               )),
             ),
           ),
-          Positioned(
-            left: 10,
-            top: 20,
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 40),
             child: Row(
-              children: const [
-                ArrowBackIcon(
-                  color: Colors.white,
-                ),
-              ],
-            ),
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  ArrowBackIcon(
+                    color: Colors.white,
+                  ),
+                  Icon(Icons.favorite,color: Colors.white,size: 30,),
+                ],
+              ),
           ),
           Positioned(
-            top: 190,
+            top: 180,
             child: Container(
               padding: const EdgeInsets.only(right: 20, left: 20, top: 30),
               width: MediaQuery.of(context).size.width,
@@ -67,7 +71,7 @@ class DetailsView extends StatelessWidget {
                       children: [
                         const Text(
                           "deep cleaning ",
-                          style: TextStyle(fontSize: 18),
+                          style: TextStyle(fontSize: 24,fontWeight: FontWeight.bold),
                         ),
                         Text(
                           "15 \$ hr",
@@ -76,7 +80,7 @@ class DetailsView extends StatelessWidget {
                         )
                       ],
                     ),
-                    SizedBox(height: screenUtil.setHeight(20)),
+                   10.ph,
                     GetBuilder<MyController>(builder: (_) {
                       return InkWell(
                         onTap: () {
@@ -87,54 +91,51 @@ class DetailsView extends StatelessWidget {
                             controller.isStar == false
                                 ? const Icon(
                                     Icons.star,
-                                    size: 35,
+                                    size: 25,
                                   )
-                                : const Icon(Icons.star,
-                                    color: Colors.yellow, size: 35),
+                                :  Icon(Icons.star,
+                                    color: ColorApp.starTrue, size: 25),
                             controller.isStar == false
                                 ? const Icon(
                                     Icons.star,
-                                    size: 35,
+                                    size: 25,
                                   )
-                                : const Icon(
+                                :  Icon(
                                     Icons.star,
-                                    color: Colors.yellow,
-                                    size: 35,
+                                    color: ColorApp.starTrue,
+                                    size: 25,
                                   ),
                             controller.isStar == false
                                 ? const Icon(
                                     Icons.star,
-                                    size: 35,
+                                    size: 25,
                                   )
-                                : const Icon(Icons.star,
-                                    color: Colors.yellow, size: 35),
+                                :  Icon(Icons.star,
+                                    color: ColorApp.starTrue, size: 25),
                             controller.isStar == false
                                 ? const Icon(
                                     Icons.star,
-                                    size: 35,
+                                    size: 25,
                                   )
-                                : const Icon(Icons.star,
-                                    color: Colors.yellow, size: 35),
-                            SizedBox(
-                              width: screenUtil.setWidth(20),
-                            ),
+                                :  Icon(Icons.star,
+                                    color: ColorApp.starFalse, size: 25),
+                            20.pw,
                             const Text(
                               "4.5",
-                              style: TextStyle(fontSize: 20),
+                              style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),
                             ),
                           ],
                         ),
                       );
                     }),
-                    SizedBox(
-                      height: screenUtil.setHeight(15),
-                    ),
+                    10.ph,
                     const Align(
                         alignment: Alignment.centerLeft,
                         child: Text(
                           "About this service",
-                          style: TextStyle(fontSize: 18),
+                          style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),
                         )),
+                    10.ph,
                     GetBuilder<MyController>(builder: (_) {
                       return Column(
                         children: [
@@ -153,29 +154,16 @@ class DetailsView extends StatelessWidget {
                                     ? "Read less"
                                     : "Read more",
                                 style: TextStyle(
-                                    fontSize: 20, color: ColorApp.primary),
+                                    fontSize: 18, color: ColorApp.primary),
                               )),
                         ],
                       );
                     }),
-                    SizedBox(
-                      height: screenUtil.setHeight(20),
-                    ),
+                   10.ph,
                     Container(
                       height: screenUtil.setHeight(55),
                       width: screenUtil.setWidth(358),
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(20),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.grey.withOpacity(0.5),
-                              spreadRadius: 3,
-                              blurRadius: 5,
-                              offset: const Offset(
-                                  0, 3), // changes position of shadow
-                            ),
-                          ]),
+                      decoration:buildShadowContainer(borderRadius: BorderRadius.circular(20),),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -207,29 +195,43 @@ class DetailsView extends StatelessWidget {
                         ],
                       ),
                     ),
-                    SizedBox(
-                      height: screenUtil.setHeight(20),
-                    ),
+                   10.ph,
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const Text(
-                          "Reviews   (15)",
-                          style: TextStyle(fontSize: 18),
+                        Row(
+                          children: [
+                            const Text(
+                              "Reviews",
+                              style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),
+                            ),
+                            10.pw,
+                            const Text(
+                              "(15)",
+                              style: TextStyle(fontSize: 14,color: Colors.grey),
+                            ),
+                          ],
                         ),
-                        Text(
-                          "See all",
-                          style: TextStyle(color: ColorApp.primary),
+                        InkWell(
+                          onTap: (){
+                            Get.to(()=>ReviewScreen());
+                          },
+                          child: Text(
+                            "See all",
+                            style: TextStyle(color: ColorApp.primary),
+                          ),
                         ),
                       ],
                     ),
-                    const SizedBox(
-                      height: 20,
-                    ),
+                   10.ph,
                     SizedBox(
                       height: screenUtil.setHeight(165),
-                      child: CardDetailesView(
-                          screenUtil: screenUtil, controller: controller),
+                      child: ListView.builder(
+                          itemCount: 4,
+                          scrollDirection: Axis.horizontal,
+                         itemBuilder: (context, index) {
+                      return CardDetailsView(screenUtil: screenUtil,controller: controller,);
+                         }),
                     ),
                   ],
                 ),
@@ -242,8 +244,3 @@ class DetailsView extends StatelessWidget {
     );
   }
 }
-
-
-
-
-//

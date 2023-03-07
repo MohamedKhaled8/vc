@@ -14,7 +14,7 @@ class ChangeCardScreen extends StatelessWidget {
     return  Scaffold(
       body: Column(
         children: [
-          CustomAppBarTwo(110, text: 'Change Card'),
+          CustomAppBarOne(110, text: 'Change Card'),
            SizedBox(height: screenUtil.setHeight(20),),
           Expanded(child: ListView.separated(itemBuilder: (context,index)=>buildContainerItem(context),itemCount: 4,separatorBuilder: (context,index)=>SizedBox(height: 20 ,),)),
           SizedBox(

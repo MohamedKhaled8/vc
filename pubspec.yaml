@@ -41,6 +41,7 @@ dependencies:
   dropdown_search: ^5.0.5
   flutter_rating_bar: ^4.0.1
   syncfusion_flutter_sliders:
+  image_picker:
 dev_dependencies:
   flutter_test:
     sdk: flutter

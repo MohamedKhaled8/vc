@@ -27,12 +27,16 @@ class LoginView extends StatelessWidget {
         child: Form(
           key: formKey,
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              ArrowBackIcon(ontap: () {
-                Get.to(const AuthAppView());
-              },),
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: 80),
+                padding: const EdgeInsets.symmetric(horizontal: 25,vertical: 40),
+                child: ArrowBackIcon(ontap: () {
+                  Get.to(const AuthAppView());
+                },),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 40),
                 child: Center(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,

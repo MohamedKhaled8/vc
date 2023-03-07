@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:vc/view/auth_view/auth_view.dart';
-import 'package:vc/view/home_view/home.dart';
-import 'package:vc/view/home_view/user_profile/profile_setting_screen.dart';
-import 'package:vc/view/home_view/user_profile/user_profile.dart';
-import 'package:vc/view/payment/test.dart';
+
 import 'package:vc/view/spalsh_view/splash_screen_view.dart';
-main() async {
+
+ main() async {
   // WidgetsFlutterBinding.ensureInitialized();
   //  Cachdata.cachInitialization();
   runApp(const MyApp());
@@ -24,10 +21,10 @@ class MyApp extends StatelessWidget {
         splitScreenMode: true,
         designSize: const Size(393, 852),
         builder: (context, child) {
-          return   GetMaterialApp(
+          return   const GetMaterialApp(
             title: 'Value Cleaning',
             debugShowCheckedModeBanner: false,
-            home: ProfileSettingScreen(),
+            home: SplashScreen(),
           );
         });
   }

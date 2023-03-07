@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:vc/theme/extensions/extensions.dart';
 
 import '../controller/myController.dart';
 import '../theme/constant/const_colors.dart';
@@ -14,13 +15,8 @@ class CustomAppbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ScreenUtil screenUtil = ScreenUtil();
-    Size size = MediaQuery.of(context).size;
-    return Positioned(
-      left: 0,
-      right: 0,
-      child: Container(
-        width: double.maxFinite,
-        height: screenUtil.setHeight(300),
+    return  Container(
+        height: screenUtil.setHeight(220),
         decoration: const BoxDecoration(
           image: DecorationImage(
               image: AssetImage('assets/images/png/service.png'),fit: BoxFit.cover
@@ -28,13 +24,18 @@ class CustomAppbar extends StatelessWidget {
         ),
         child:
         Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                ArrowBackIcon(color: Colors.white,ontap: (){},),
-                IconButton(icon:Icon(Icons.menu,color: Colors.white,size: 20,),onPressed: (){},),
-              ],
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15,vertical: 30),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  ArrowBackIcon(color: Colors.white,ontap: (){Get.back();},),
+                  Icon(Icons.menu,color: Colors.white,size: 20,)
+                ],
+              ),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -45,9 +46,9 @@ class CustomAppbar extends StatelessWidget {
                     height: 60,
                     decoration:  BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      color: Color(0xffB9FFC0),
+                      color: const Color(0xffB9FFC0),
                     ),),
-                  SizedBox(width: screenUtil.setWidth(10),),
+                  10.pw,
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -108,7 +109,6 @@ class CustomAppbar extends StatelessWidget {
             )
           ],
         ),
-      ),
-    );
+      );
   }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:vc/theme/extensions/extensions.dart';
 import 'package:vc/view/home_view/bottom_nav_bar.dart';
 import 'package:vc/view/spalsh_view/splash_screen_view.dart';
 import '../../model/onboarding_content.dart';
@@ -41,9 +42,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(
-              height: 20,
-            ),
+            60.ph,
             ArrowBackIcon(ontap: (){ Get.to(const SplashScreen());},),
             Expanded(
               child: PageView.builder(

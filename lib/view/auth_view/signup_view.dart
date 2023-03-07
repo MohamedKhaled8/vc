@@ -6,6 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import 'package:vc/theme/constant/const_colors.dart';
+import 'package:vc/theme/extensions/extensions.dart';
 
 import '../../widgets/arrow_back_icons.dart';
 import '../../widgets/custom_textform_field.dart';
@@ -27,11 +28,16 @@ class SignUpView extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-             ArrowBackIcon(
-              ontap: () {
-                Get.to(const AuthAppView());
-              },
+            60.ph,
+             Padding(
+               padding: const EdgeInsets.only(left: 20,bottom: 10),
+               child: ArrowBackIcon(
+                ontap: () {
+                  Get.to(const AuthAppView());
+                },
+               ),
              ),
             Column(
               children: [

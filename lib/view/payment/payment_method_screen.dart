@@ -16,7 +16,7 @@ class PaymentMethodScreen extends StatelessWidget {
     return  Scaffold(
       body: Column(
         children: [
-          CustomAppBarTwo(110, text: 'payment methods'),
+          CustomAppBarOne(110, text: 'payment methods'),
           SizedBox(height: screenUtil.setHeight(100),),
           Expanded(child: Container(
             height: 120,
@@ -34,16 +34,7 @@ class PaymentMethodScreen extends StatelessWidget {
           Expanded(child: Container(
             height: 120,
             width: size.width-40,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                color: Colors.white,
-                boxShadow: [BoxShadow(
-                  color: Colors.grey.withOpacity(0.5),
-                  offset:Offset(0, 3),
-                  spreadRadius: 3,
-                  blurRadius: 5,
-                )]
-            ),
+            decoration: buildShadowContainer(borderRadius: BorderRadius.circular(20)),
             child: Center(child:
             Column(
               mainAxisAlignment: MainAxisAlignment.center,

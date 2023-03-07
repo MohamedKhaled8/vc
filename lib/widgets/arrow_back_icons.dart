@@ -14,19 +14,11 @@ class ArrowBackIcon extends StatelessWidget {
  final Color? color;
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 40),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          InkWell(
-              onTap: ontap,
-              child:  Icon(
-                Icons.arrow_back_ios,
-                color: color,
-              )),
-        ],
-      ),
-    );
+    return InkWell(
+        onTap: ontap,
+        child:  Icon(
+          Icons.arrow_back_ios,
+          color: color,
+        ));
   }
 }
