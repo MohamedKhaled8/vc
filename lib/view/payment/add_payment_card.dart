@@ -108,30 +108,29 @@ class AddPaymentCard extends StatelessWidget {
               ],
             ),
           ),
-          const Expanded(child: SizedBox()),
-          Container(
-            height: 50,
-            width: size.width ,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: Colors.white,
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.5),
-                    offset: const Offset(0, 3),
-                    spreadRadius: 3,
-                    blurRadius: 5,
-                  )
-                ]),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30,vertical: 5),
-              child:
-              CustomButtonTWo(screenUtil: screenUtil, color: ColorApp.primary, color1: Colors.white, txt: 'Add Card',onTap: (){
-                Get.back();
-              },),
-            ),
-          ),
         ],
+      ),
+      bottomNavigationBar:Container(
+        height: 50,
+        width: size.width ,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            color: Colors.white,
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey.withOpacity(0.5),
+                offset: const Offset(0, 3),
+                spreadRadius: 3,
+                blurRadius: 5,
+              )
+            ]),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 30,vertical: 5),
+          child:
+          CustomButtonTWo(screenUtil: screenUtil, color: ColorApp.primary, color1: Colors.white, txt: 'Add Card',onTap: (){
+            Get.back();
+          },),
+        ),
       ),
     );
   }

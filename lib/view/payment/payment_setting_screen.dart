@@ -28,29 +28,28 @@ class PaymentSettingScreen extends StatelessWidget {
             const Color(0xffBC6907),
           ],child: Column()),
           10.ph,
-          Expanded(child: SizedBox()),
-          Container(
-            height: 50,
-            width: size.width ,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.only(topRight: Radius.circular(20),topLeft: Radius.circular(20)),
-                color: Colors.white,
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.5),
-                    offset: Offset(0, 3),
-                    spreadRadius: 3,
-                    blurRadius: 5,
-                  )
-                ]),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30,vertical: 5),
-              child:
-              CustomButtonTWo(screenUtil: screenUtil, color: ColorApp.primary, color1: Colors.white, txt: 'Add new Card',onTap: (){
-                Get.to(()=>AddPaymentCard());}),
-            ),
-          ),
         ],
+      ),
+      bottomNavigationBar: Container(
+        height: 50,
+        width: size.width ,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.only(topRight: Radius.circular(20),topLeft: Radius.circular(20)),
+            color: Colors.white,
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey.withOpacity(0.5),
+                offset: Offset(0, 3),
+                spreadRadius: 3,
+                blurRadius: 5,
+              )
+            ]),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 30,vertical: 5),
+          child:
+          CustomButtonTWo(screenUtil: screenUtil, color: ColorApp.primary, color1: Colors.white, txt: 'Add new Card',onTap: (){
+            Get.to(()=>AddPaymentCard());}),
+        ),
       ),
     );
   }

@@ -8,6 +8,7 @@ import 'package:vc/widgets/custom_textform_field.dart';
 
 import '../../controller/myController.dart';
 import '../../theme/constant/const_colors.dart';
+import '../../widgets/cutom_buttom_two.dart';
 
 class RateExperienceScreen extends StatelessWidget {
    RateExperienceScreen({Key? key}) : super(key: key);
@@ -16,6 +17,7 @@ final ScreenUtil screenUtil = ScreenUtil();
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return  GestureDetector(
       onTap: (){
         Focus.of(context).unfocus();
@@ -126,6 +128,29 @@ final ScreenUtil screenUtil = ScreenUtil();
             ],
           ),
         ),
+        bottomNavigationBar:Container(
+        height: 50,
+        width: size.width ,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            color: Colors.white,
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey.withOpacity(0.5),
+                offset: const Offset(0, 3),
+                spreadRadius: 3,
+                blurRadius: 5,
+              )
+            ]),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 30,vertical: 5),
+          child:
+          CustomButtonTWo(screenUtil: screenUtil, color: ColorApp.primary, color1: Colors.white, txt: 'Submit Feedback',onTap: (){
+            Get.back();
+          },),
+        ),
+      ),
+
       ),
     );
   }
