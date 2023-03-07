@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:vc/theme/extensions/extensions.dart';
 import 'package:vc/view/payment/payment_method_screen.dart';
 import 'package:vc/widgets/custom_text_next_button.dart';
 import '../../controller/myController.dart';
@@ -38,7 +39,7 @@ class SamplesScreen extends StatelessWidget {
                       child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text('Picture',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
+                            const Text('Picture',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
                             SizedBox(height: screenUtil.setHeight(15),),
                             const Text('Please upload some samples',style: TextStyle(fontSize: 18,color: Colors.grey),),
                             SizedBox(height: screenUtil.setHeight(10),),
@@ -49,38 +50,54 @@ class SamplesScreen extends StatelessWidget {
                                     height: 150,
                                     width: size.width/2,
                                     decoration: BoxDecoration(
-                                      color: ColorApp.secound,
                                       borderRadius: BorderRadius.circular(20),
+                                      image: const DecorationImage(
+                                        image: AssetImage('assets/icons/Picture1.png'),fit: BoxFit.cover
+                                      ),
                                     ),
                                   ),
                                 ),
-                                SizedBox(width: screenUtil.setWidth(15),),
 
                                 Expanded(
                                   child: Container(
                                     height: 150,
                                     width: size.width/2,
                                     decoration: BoxDecoration(
-                                      color: ColorApp.primary,
                                       borderRadius: BorderRadius.circular(20),
+                                        image: const DecorationImage(
+                                            image: AssetImage('assets/icons/Picture2.png'),fit: BoxFit.cover
+                                        ),
                                     ),
                                   ),
                                 ),
                               ],
                             ),
-                            SizedBox(height: screenUtil.setHeight(10),),
-                            Container(
-                              height: 150,
-                              width: size.width/2-20,
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(20),
-                                border: Border.all(color: Colors.black,width: 1,style: BorderStyle.solid),
-                              ),
-                              child: Center(child: IconButton(onPressed: (){}, icon: Icon(Icons.add,size: 25,)),),
-                            ),
-
-                            SizedBox(height: screenUtil.setHeight(20),),
+                            20.ph,
+                            GetBuilder<MyController>(builder: (_){
+                              return Container(
+                                height: screenUtil.setHeight(180),
+                                width: size.width/2-20,
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(20),
+                                  border: Border.all(color: Colors.black,width: 1,style: BorderStyle.none),
+                                ),
+                                child:controller.image != null?Image.file(controller.image!,height: 150,fit: BoxFit.cover,):
+                                Container(
+                                  height: 150,
+                                  width: size.width/2-20,
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(20),
+                                    border: Border.all(color: Colors.black,width: 1,style: BorderStyle.solid),
+                                  ),
+                                  child: Center(child: IconButton(onPressed: (){
+                                    controller.pickImage();
+                                  }, icon: const Icon(Icons.add,size: 25,)),),
+                                ),
+                              );
+                            }),
+                            20.ph,
                           ]
                       ),
                     ),
@@ -90,7 +107,7 @@ class SamplesScreen extends StatelessWidget {
         ]
       ),
     ),
-        bottomNavigationBar: CustomTextNextButton(onTap: (){Get.to(()=>PaymentMethodScreen());}),
+        bottomNavigationBar: CustomTextNextButton(onTap: (){Get.to(()=>const PaymentMethodScreen());}),
 
     );
   }

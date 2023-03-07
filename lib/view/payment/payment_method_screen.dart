@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:vc/theme/extensions/extensions.dart';
 import 'package:vc/view/payment/checkout_screen.dart';
 import 'package:vc/widgets/container_shadow.dart';
 import 'package:vc/widgets/custom_appbar_two.dart';
@@ -25,7 +26,17 @@ class PaymentMethodScreen extends StatelessWidget {
             child: Center(child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                IconButton(onPressed: (){}, icon: Icon(Icons.payment_outlined,color: Colors.blue,size: 30,),),
+                Container(
+                  width: 50,
+                  height: 50,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                      image: AssetImage('assets/icons/payment1.png')
+                    )
+                  ),
+                ),
+                15.ph,
                 Text('Credit /Debit Card',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),)
               ],
             ),),
@@ -39,7 +50,17 @@ class PaymentMethodScreen extends StatelessWidget {
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                IconButton(onPressed: (){}, icon: Icon(Icons.payments,color: Colors.blue,size: 30,),),
+                Container(
+                  width: 50,
+                  height: 50,
+                  decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      image: DecorationImage(
+                          image: AssetImage('assets/icons/b2c.png')
+                      )
+                  ),
+                ),
+                15.ph,
                 Text('Receipt ',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),)
               ],
             ),

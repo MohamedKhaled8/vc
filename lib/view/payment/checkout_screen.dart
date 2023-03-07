@@ -4,11 +4,8 @@ import 'package:get/get.dart';
 import 'package:vc/theme/extensions/extensions.dart';
 import 'package:vc/view/payment/order_details_screen.dart';
 import 'package:vc/widgets/container_shadow.dart';
-import 'package:vc/widgets/main_button.dart';
 import '../../theme/constant/const_colors.dart';
-import '../../widgets/arrow_back_icons.dart';
 import '../../widgets/custom_appbar_two.dart';
-import '../../widgets/custom_buttom.dart';
 import '../../widgets/cutom_buttom_two.dart';
 
 class CheckoutScreen extends StatelessWidget {
@@ -61,15 +58,53 @@ class CheckoutScreen extends StatelessWidget {
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
                             color: Colors.yellow.shade700,
+                            image: DecorationImage(
+                              image: AssetImage('assets/icons/checkout.png')
+                            )
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              children: [
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                            Text('Change Card',style: TextStyle(fontSize: 18,color: Colors.white),),
+                                    Container(
+                                      height: screenUtil.setHeight(30),
+                                      width: screenUtil.setWidth(30),
+                                      decoration: BoxDecoration(
+                                          color: Colors.white,
+                                          shape: BoxShape.circle
+                                      ),
+                                    ),
+
+                                  ],
+                                ),
+                                20.ph,
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text('•••• •••• •••• 3333',style: TextStyle(fontSize: 14,color: Colors.white),),
+                                    Text('07/24',style: TextStyle(fontSize: 14,color: Colors.white),),
+                                  ],
+                                ),
+
+                              ],
+                            ),
                           ),
                         ),
                       ),
-                      CustomButtonTWo(
-                        onTap: () {},
-                        screenUtil: screenUtil,
-                        txt: 'Change Card',
-                        color: Colors.grey.withOpacity(0.3),
-                        color1: Colors.black,
+                      Container(
+                        height: screenUtil.setHeight(48),
+                        decoration: BoxDecoration(
+                          color: Colors.grey,
+                          borderRadius: BorderRadius.only(
+                            bottomRight: Radius.circular(15),
+                            bottomLeft: Radius.circular(15),
+                          ),
+                        ),
+                        child: Center(child: Text('Change Card',style: TextStyle(fontSize: 18),),),
                       ),
                     ],
                   ),
@@ -110,7 +145,7 @@ class CheckoutScreen extends StatelessWidget {
           ),
           10.ph,
           Container(
-            height: screenUtil.setHeight(192),
+            height: screenUtil.setHeight(186.5),
             width: size.width - 40,
             decoration: buildShadowContainer(borderRadius: BorderRadius.circular(20)),
              child: Column(
@@ -120,6 +155,7 @@ class CheckoutScreen extends StatelessWidget {
                  Padding(
                    padding: const EdgeInsets.all(8.0),
                    child: Column(
+                     crossAxisAlignment: CrossAxisAlignment.start,
                      children: [
                        Text(
                          'Order details',
@@ -181,12 +217,12 @@ class CheckoutScreen extends StatelessWidget {
                              height: 40,
                              decoration: BoxDecoration(
                                color: ColorApp.primary,
-                               borderRadius: BorderRadius.only(bottomLeft: Radius.circular(20),bottomRight: Radius.circular(20),),
+                               borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10),bottomRight: Radius.circular(10),),
                              ),
                              child: Center(child: Text('See All',style: TextStyle(color: Colors.white,fontSize: 14),),),
                            ),
                          )),
-                    10.pw,
+                     5.pw,
                      Expanded(
                          child:InkWell(
                            onTap:(){
@@ -195,7 +231,7 @@ class CheckoutScreen extends StatelessWidget {
                              height: 40,
                              decoration: BoxDecoration(
                                color: ColorApp.buttonBlue,
-                               borderRadius: BorderRadius.only(bottomLeft: Radius.circular(20),bottomRight: Radius.circular(20),),
+                               borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10),bottomRight: Radius.circular(10),),
                              ),
                              child: Center(child: Text('Edit',style: TextStyle(color: Colors.white,fontSize: 14),),),
                            ),
@@ -207,7 +243,7 @@ class CheckoutScreen extends StatelessWidget {
           ),
           10.ph,
           Container(
-            height: 160,
+            height: 158,
             width: size.width - 40,
             decoration: buildShadowContainer(borderRadius: BorderRadius.circular(20),),
             child: Column(

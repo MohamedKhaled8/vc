@@ -34,7 +34,7 @@ class _ServiceFormScreenState extends State<ServiceFormScreen> {
             children: [
               CustomAppbar(),
               Positioned (
-                 top: 150,
+                 top: 160,
                  child: Column(
                    children: [
                      Container(
@@ -67,7 +67,7 @@ class _ServiceFormScreenState extends State<ServiceFormScreen> {
                                });
                              },
                            ),
-                           10.ph,
+                           8.ph,
                            const Text('Date and Time',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
                            5.ph,
                            Row(
@@ -85,6 +85,9 @@ class _ServiceFormScreenState extends State<ServiceFormScreen> {
                                        decoration: BoxDecoration(
                                          borderRadius:  BorderRadius.circular(10),
                                          color: ColorApp.primary,
+                                         image: DecorationImage(
+                                           image: AssetImage('assets/icons/c1.png')
+                                         ),
                                        ),
                                      ),
                                      10.pw,
@@ -101,18 +104,8 @@ class _ServiceFormScreenState extends State<ServiceFormScreen> {
                                Expanded(child: Container(
                                  height: screenUtil.setHeight(40),
                                  width: size.width/2,
-                                 decoration: BoxDecoration(
-                                     color: Colors.white,
-                                     borderRadius: BorderRadius.circular(10),
-                                     boxShadow: [
-                                       BoxShadow(
-                                         color: Colors.grey.withOpacity(0.5),
-                                         spreadRadius: 3,
-                                         blurRadius: 5,
-                                         offset: const Offset(
-                                             0, 3), // changes position of shadow
-                                       ),
-                                     ]),
+                                 decoration:buildShadowContainer(borderRadius: BorderRadius.circular(20),
+                                 ),
                                  child: Row(
                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                    children: [
@@ -122,6 +115,10 @@ class _ServiceFormScreenState extends State<ServiceFormScreen> {
                                        decoration: BoxDecoration(
                                          borderRadius:  BorderRadius.circular(10),
                                          color: ColorApp.primary,
+
+                                       image: DecorationImage(
+                                           image: AssetImage('assets/icons/c2.png')
+                                       ),
                                        ),
                                      ),
                                      10.pw,
@@ -135,7 +132,7 @@ class _ServiceFormScreenState extends State<ServiceFormScreen> {
                                ),),
                              ],
                            ),
-                           15.ph,
+                           10.ph,
                            const Text('Address',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
                            10.ph,
                            Container(
@@ -151,6 +148,9 @@ class _ServiceFormScreenState extends State<ServiceFormScreen> {
                                    decoration: BoxDecoration(
                                      borderRadius:  BorderRadius.circular(10),
                                      color: ColorApp.primary,
+                                     image: DecorationImage(
+                                         image: AssetImage('assets/icons/c3.png')
+                                     ),
                                    ),
                                  ),
                                  10.pw,
@@ -169,9 +169,9 @@ class _ServiceFormScreenState extends State<ServiceFormScreen> {
                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                              children: [
                                Expanded(child:CustomButtom(text: 'Once', color: ColorApp.primary, screenUtil: screenUtil,color1: Colors.white,),),
-                               SizedBox(width: screenUtil.setWidth(10),),
+                              10.pw,
                                Expanded(child:CustomButtom(text: 'Weekly', color: Colors.white, screenUtil: screenUtil,color1: ColorApp.primary,),),
-                               SizedBox(width: screenUtil.setWidth(10),),
+                               10.pw,
                                Expanded(child:CustomButtom(text: 'Monthly', color: Colors.white, screenUtil: screenUtil,color1: ColorApp.primary,),),
                              ],
                            ),
@@ -184,7 +184,9 @@ class _ServiceFormScreenState extends State<ServiceFormScreen> {
                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                  children: [
                                    Expanded(child:CustomButtom(text: 'Cooking', color: ColorApp.primary, screenUtil: screenUtil,color1: Colors.white,),),
+                                   5.pw,
                                    Expanded(child:CustomButtom(text: 'Once', color: Colors.white, screenUtil: screenUtil,color1: ColorApp.primary,),),
+                                   5.pw,
                                    Expanded(child:CustomButtom(text: 'Washing & Cooking', color: Colors.white, screenUtil: screenUtil,color1: ColorApp.primary,),),
 
                                  ],
@@ -194,15 +196,15 @@ class _ServiceFormScreenState extends State<ServiceFormScreen> {
                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                  children: [
                                    Expanded(child:CustomButtom(text: 'Window', color: ColorApp.primary, screenUtil: screenUtil,color1: Colors.white,),),
+                                   5.pw,
                                    Expanded(child:CustomButtom(text: 'Dish Washing', color: Colors.white, screenUtil: screenUtil,color1: ColorApp.primary,),),
+                                   5.pw,
                                    Expanded(child:CustomButtom(text: 'Cooking', color: Colors.white, screenUtil: screenUtil,color1: ColorApp.primary,),),
 
                                  ],
                                ),
                              ],
                            ),
-                           10.ph,
-
                          ]
                            ),
                        ),

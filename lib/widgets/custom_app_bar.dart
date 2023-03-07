@@ -28,12 +28,25 @@ class CustomAppbar extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15,vertical: 30),
+              padding: const EdgeInsets.symmetric(horizontal: 25,vertical: 30),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   ArrowBackIcon(color: Colors.white,ontap: (){Get.back();},),
-                  Icon(Icons.menu,color: Colors.white,size: 20,)
+                  Container(
+                    width: 30,
+                    height: 30,
+                    decoration:  BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        image: DecorationImage(
+                            image: AssetImage('assets/icons/b3.png'),
+                          fit: BoxFit.cover,
+                        )
+                    ),
+
+
+                  ),
+
                 ],
               ),
             ),
@@ -47,7 +60,13 @@ class CustomAppbar extends StatelessWidget {
                     decoration:  BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
                       color: const Color(0xffB9FFC0),
-                    ),),
+                      image: DecorationImage(
+                        image: AssetImage('assets/icons/cleaning 1.png')
+                      )
+                    ),
+
+
+                  ),
                   10.pw,
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
