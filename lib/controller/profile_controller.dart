@@ -16,5 +16,11 @@ class ProfileController extends GetxController{
     }on PlatformException catch(error){
       print('Failed to pick image $error');
     }
+    update();
+
+  }
+  @override
+  void onInit() {
+    super.onInit();
   }
 }

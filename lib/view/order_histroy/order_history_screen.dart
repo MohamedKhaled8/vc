@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:vc/widgets/custom_appbar_two.dart';
 
 class OrderHistoryScreen extends StatelessWidget {
@@ -9,7 +10,7 @@ class OrderHistoryScreen extends StatelessWidget {
     return  Scaffold(
       body: Column(
         children: [
-          CustomAppBarOne(110, text: 'Order History')
+          CustomAppBarOne(110, text: 'Order History',ontap: (){Get.back();},)
         ],
       ),
     );

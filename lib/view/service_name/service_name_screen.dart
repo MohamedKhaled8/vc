@@ -6,6 +6,7 @@ import 'package:vc/theme/constant/const_colors.dart';
 import 'package:vc/theme/extensions/extensions.dart';
 import 'package:vc/view/service_name/review_screen.dart';
 import 'package:vc/widgets/container_shadow.dart';
+import 'package:vc/widgets/rating.dart';
 import '../../controller/myController.dart';
 import '../../widgets/arrow_back_icons.dart';
 import 'card_detailes_view.dart';
@@ -82,53 +83,7 @@ class ServiceNameScreen extends StatelessWidget {
                       ],
                     ),
                    10.ph,
-                    GetBuilder<MyController>(builder: (_) {
-                      return InkWell(
-                        onTap: () {
-                          controller.isStare();
-                        },
-                        child: Row(
-                          children: [
-                            controller.isStar == false
-                                ? const Icon(
-                                    Icons.star,
-                                    size: 25,
-                                  )
-                                :  Icon(Icons.star,
-                                    color: ColorApp.starTrue, size: 25),
-                            controller.isStar == false
-                                ? const Icon(
-                                    Icons.star,
-                                    size: 25,
-                                  )
-                                :  Icon(
-                                    Icons.star,
-                                    color: ColorApp.starTrue,
-                                    size: 25,
-                                  ),
-                            controller.isStar == false
-                                ? const Icon(
-                                    Icons.star,
-                                    size: 25,
-                                  )
-                                :  Icon(Icons.star,
-                                    color: ColorApp.starTrue, size: 25),
-                            controller.isStar == false
-                                ? const Icon(
-                                    Icons.star,
-                                    size: 25,
-                                  )
-                                :  Icon(Icons.star,
-                                    color: ColorApp.starFalse, size: 25),
-                            20.pw,
-                            const Text(
-                              "4.5",
-                              style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),
-                            ),
-                          ],
-                        ),
-                      );
-                    }),
+                    CustomRating(),
                     10.ph,
                     const Align(
                         alignment: Alignment.centerLeft,
@@ -196,7 +151,7 @@ class ServiceNameScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-                   10.ph,
+                   5.ph,
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -224,9 +179,9 @@ class ServiceNameScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                   10.ph,
+                   5.ph,
                     SizedBox(
-                      height: screenUtil.setHeight(165),
+                      height: screenUtil.setHeight(176),
                       child: ListView.builder(
                           itemCount: 4,
                           scrollDirection: Axis.horizontal,

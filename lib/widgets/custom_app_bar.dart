@@ -3,6 +3,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:vc/theme/extensions/extensions.dart';
+import 'package:vc/view/messages/chat_view.dart';
+import 'package:vc/view/messages/messages.dart';
+import 'package:vc/widgets/rating.dart';
 
 import '../controller/myController.dart';
 import '../theme/constant/const_colors.dart';
@@ -33,20 +36,22 @@ class CustomAppbar extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   ArrowBackIcon(color: Colors.white,ontap: (){Get.back();},),
-                  Container(
-                    width: 30,
-                    height: 30,
-                    decoration:  BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        image: DecorationImage(
-                            image: AssetImage('assets/icons/b3.png'),
-                          fit: BoxFit.cover,
-                        )
+                  InkWell(
+                    onTap: (){
+                      Get.to(()=>ChatView());
+                    },
+                    child: Container(
+                      width: 30,
+                      height: 30,
+                      decoration:  BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          image: const DecorationImage(
+                              image: AssetImage('assets/icons/b3.png'),
+                            fit: BoxFit.cover,
+                          )
+                      ),
                     ),
-
-
                   ),
-
                 ],
               ),
             ),
@@ -60,7 +65,7 @@ class CustomAppbar extends StatelessWidget {
                     decoration:  BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
                       color: const Color(0xffB9FFC0),
-                      image: DecorationImage(
+                      image: const DecorationImage(
                         image: AssetImage('assets/icons/cleaning 1.png')
                       )
                     ),
@@ -73,54 +78,7 @@ class CustomAppbar extends StatelessWidget {
                     children: [
                       const Text('deep Cleaning',style: TextStyle(color: Colors.white,fontSize: 20),),
                       SizedBox(height: screenUtil.setHeight(10),),
-                      GetBuilder<MyController>(builder: (_) {
-                        return InkWell(
-                          onTap: () {
-                            controller.isStare();
-                          },
-                          child: Row(
-                            children: [
-                              controller.isStar == false
-                                  ? const Icon(
-                                Icons.star,
-                                size: 20,
-                              )
-                                  : const Icon(Icons.star,
-                                  color: Colors.yellow, size: 20),
-                              controller.isStar == false
-                                  ? const Icon(
-                                Icons.star,
-                                size: 20,
-                              )
-                                  : const Icon(
-                                Icons.star,
-                                color: Colors.yellow,
-                                size: 20,
-                              ),
-                              controller.isStar == false
-                                  ? const Icon(
-                                Icons.star,
-                                size: 20,
-                              )
-                                  : const Icon(Icons.star,
-                                  color: Colors.yellow, size: 20),
-                              controller.isStar == true
-                                  ?  Icon(
-                                Icons.star,
-                                size: 20,
-                                color: ColorApp.starFalse,
-                              )
-                                  : const Icon(Icons.star,
-                                  color: Colors.yellow, size: 20),
-                              SizedBox(width: screenUtil.setWidth(10),),
-                              const Text(
-                                "4.5",
-                                style: TextStyle(fontSize: 20,color: Colors.white),
-                              ),
-                            ],
-                          ),
-                        );
-                      }),
+                      const CustomRating(),
                     ],
                   ),
                 ],

@@ -41,7 +41,8 @@ dependencies:
   flutter_screenutil: ^5.6.1
   dropdown_search: ^5.0.5
   flutter_rating_bar: ^4.0.1
-  syncfusion_flutter_sliders:
+  flutter_multi_slider: ^1.1.0
+  intl: ^0.17.0
   image_picker:
 dev_dependencies:
   flutter_test:

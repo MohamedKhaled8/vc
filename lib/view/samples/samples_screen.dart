@@ -2,17 +2,15 @@ import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:vc/controller/profile_controller.dart';
 import 'package:vc/theme/extensions/extensions.dart';
 import 'package:vc/view/payment/payment_method_screen.dart';
 import 'package:vc/widgets/custom_text_next_button.dart';
-import '../../controller/myController.dart';
 import '../../theme/constant/const_colors.dart';
 import '../../widgets/custom_app_bar.dart';
-
 class SamplesScreen extends StatelessWidget {
    SamplesScreen({Key? key}) : super(key: key);
-  final controller = Get.put(MyController());
-
+  final controller = Get.put(ProfileController());
   @override
   Widget build(BuildContext context) {
     ScreenUtil screenUtil = ScreenUtil();
@@ -74,7 +72,7 @@ class SamplesScreen extends StatelessWidget {
                               ],
                             ),
                             20.ph,
-                            GetBuilder<MyController>(builder: (_){
+                            GetBuilder<ProfileController>(builder: (_){
                               return Container(
                                 height: screenUtil.setHeight(180),
                                 width: size.width/2-20,

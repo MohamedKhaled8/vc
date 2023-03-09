@@ -21,7 +21,7 @@ class UserProfile extends StatelessWidget {
             clipBehavior: Clip.none,
             alignment: Alignment.bottomCenter,
             children: [
-              CustomAppBarOne(160, text: 'User Profile'),
+              CustomAppBarOne(160, text: 'User Profile',ontap: (){},),
               Positioned(
                   bottom: -50,
                   child: Container(
@@ -43,9 +43,8 @@ class UserProfile extends StatelessWidget {
                             'assets/images/jpeg/mohamed.jpeg',
                           ),
                           fit: BoxFit.cover,
-                        )),
-                    // child: controller.image != null?Image.file(controller.image!): Image.asset('assets/images/jpeg/mohamed.jpeg'),
-                  )),
+                        ),),
+                  ),),
             ],
           ),
           60.ph,

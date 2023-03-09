@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:vc/theme/extensions/extensions.dart';
 import 'package:vc/widgets/container_shadow.dart';
 
 import '../../theme/constant/const_colors.dart';
 import '../../widgets/custom_appbar_two.dart';
-import '../../widgets/custom_textform_field.dart';
+
 import '../../widgets/cutom_buttom_two.dart';
-import '../../widgets/main_button.dart';
+
 
 class OrderDetailsScreen extends StatelessWidget {
    OrderDetailsScreen({Key? key}) : super(key: key);
@@ -22,7 +23,7 @@ class OrderDetailsScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          CustomAppBarOne(110, text: 'Order Details'),
+          CustomAppBarOne(110, text: 'Order Details',ontap: (){Get.back();},),
           30.ph,
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),

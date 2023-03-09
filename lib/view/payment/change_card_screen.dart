@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:vc/theme/constant/const_colors.dart';
 import 'package:vc/widgets/custom_appbar_two.dart';
 
@@ -14,7 +15,7 @@ class ChangeCardScreen extends StatelessWidget {
     return  Scaffold(
       body: Column(
         children: [
-          CustomAppBarOne(110, text: 'Change Card'),
+          CustomAppBarOne(110, text: 'Change Card',ontap: (){Get.back();},),
            SizedBox(height: screenUtil.setHeight(20),),
           Expanded(child: ListView.separated(itemBuilder: (context,index)=>buildContainerItem(context),itemCount: 4,separatorBuilder: (context,index)=>SizedBox(height: 20 ,),)),
           SizedBox(

@@ -17,7 +17,7 @@ class PaymentMethodScreen extends StatelessWidget {
     return  Scaffold(
       body: Column(
         children: [
-          CustomAppBarOne(110, text: 'payment methods'),
+          CustomAppBarOne(110, text: 'payment methods',ontap: (){Get.back();},),
           SizedBox(height: screenUtil.setHeight(100),),
           Expanded(child: Container(
             height: 120,

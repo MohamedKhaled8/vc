@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:vc/controller/home_controller.dart';
+import 'package:vc/controller/profile_controller.dart';
 import 'package:vc/theme/extensions/extensions.dart';
 import 'package:vc/widgets/container_shadow.dart';
 import 'package:vc/widgets/custom_appbar_two.dart';
@@ -35,7 +35,7 @@ class ProfileSettingScreen extends StatelessWidget {
                 clipBehavior: Clip.none,
                 alignment: Alignment.bottomCenter,
                 children: [
-                  CustomAppBarOne(160, text: 'Profile Setting '),
+                  CustomAppBarOne(160, text: 'Profile Setting ',ontap: (){Get.back();},),
                   Positioned(
                       bottom: -50,
                       child: Container(height: 100,width: 100,decoration: BoxDecoration(

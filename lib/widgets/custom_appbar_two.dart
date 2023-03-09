@@ -7,8 +7,9 @@ import 'arrow_back_icons.dart';
 
 class CustomAppBarOne extends StatelessWidget {
   final String text;
+  final Function() ontap;
   double height = 110;
-   CustomAppBarOne(this.height,{Key? key, required this.text}) : super(key: key);
+   CustomAppBarOne(this.height,{Key? key, required this.text, required this.ontap}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +24,7 @@ class CustomAppBarOne extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children:  [
-          ArrowBackIcon(color: Colors.white,ontap: (){Get.back();}),
+          ArrowBackIcon(color: Colors.white,ontap: ontap),
            Text(text,style: const TextStyle(color: Colors.white,fontSize: 22,fontWeight: FontWeight.normal),),
           const SizedBox(),
           20.pw

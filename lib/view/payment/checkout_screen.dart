@@ -36,7 +36,7 @@ class CheckoutScreen extends StatelessWidget {
                 ),
                 child: Column(
                   children: [
-                    CustomAppBarOne(110, text: 'Checkout'),
+                    CustomAppBarOne(110, text: 'Checkout',ontap: (){Get.back();},),
                   ],
                 ),
               ),

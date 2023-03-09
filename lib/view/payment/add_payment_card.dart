@@ -23,7 +23,7 @@ class AddPaymentCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          CustomAppBarOne(110, text: 'Add Payment Card'),
+          CustomAppBarOne(110, text: 'Add Payment Card',ontap: (){Get.back();},),
           50.ph,
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 30),
