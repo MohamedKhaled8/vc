@@ -5,32 +5,40 @@ import 'package:vc/theme/extensions/extensions.dart';
 import '../theme/constant/const_colors.dart';
 import 'arrow_back_icons.dart';
 
-class CustomAppBarOne extends StatelessWidget {
+class DefaultAppBar extends StatelessWidget with PreferredSizeWidget {
   final String text;
-  final Function() ontap;
-  double height = 110;
-   CustomAppBarOne(this.height,{Key? key, required this.text, required this.ontap}) : super(key: key);
+  final Function() onTap;
+  double height = 120;
+
+  DefaultAppBar(this.height,
+      {Key? key, required this.text, required this.onTap})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final  ScreenUtil screenUtil = ScreenUtil();
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
-      height: height,
-      decoration: BoxDecoration(
-          color: ColorApp.primary,
-          borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(20),bottomRight: Radius.circular(20),)
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children:  [
-          ArrowBackIcon(color: Colors.white,ontap: ontap),
-           Text(text,style: const TextStyle(color: Colors.white,fontSize: 22,fontWeight: FontWeight.normal),),
-          const SizedBox(),
-          20.pw
-          // CustomTextNextButton(),
-        ],
+    final ScreenUtil screenUtil = ScreenUtil();
+    return PreferredSize(
+      preferredSize: Size.fromHeight(screenUtil.setHeight(height)),
+      child: AppBar(
+        elevation: 0,
+        backgroundColor: ColorApp.primary,
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(20.0),
+            bottomRight: Radius.circular(20.0),
+          ),
+        ),
+        leading: ArrowBackIcon(color: Colors.white, ontap: onTap),
+        title: Text(
+          text,
+          style: const TextStyle(
+              color: Colors.white, fontSize: 22, fontWeight: FontWeight.normal),
+        ),
+        centerTitle: true,
       ),
     );
   }
+
+  @override
+  Size get preferredSize => Size.fromHeight(height);
 }

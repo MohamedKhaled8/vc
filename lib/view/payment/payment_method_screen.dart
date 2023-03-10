@@ -15,9 +15,10 @@ class PaymentMethodScreen extends StatelessWidget {
     ScreenUtil screenUtil = ScreenUtil();
     Size size = MediaQuery.of(context).size;
     return  Scaffold(
+      appBar:DefaultAppBar(110, text: 'payment methods',onTap: (){Get.back();},),
+
       body: Column(
         children: [
-          CustomAppBarOne(110, text: 'payment methods',ontap: (){Get.back();},),
           SizedBox(height: screenUtil.setHeight(100),),
           Expanded(child: Container(
             height: 120,

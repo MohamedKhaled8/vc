@@ -23,7 +23,7 @@ class OrderDetailsScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          CustomAppBarOne(110, text: 'Order Details',ontap: (){Get.back();},),
+          DefaultAppBar(110, text: 'Order Details',onTap: (){Get.back();},),
           30.ph,
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),

@@ -13,9 +13,10 @@ final  ScreenUtil screenUtil = ScreenUtil();
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
+      appBar:DefaultAppBar(110, text: 'Reviews',onTap: (){Get.back();},),
+
       body: Column(
         children: [
-          CustomAppBarOne(110, text: 'Reviews',ontap: (){Get.back();},),
           Expanded(child: ListView.builder(
             padding: EdgeInsets.all(10),
             itemCount: 10,

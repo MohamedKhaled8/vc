@@ -9,11 +9,8 @@ class MessagesView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          CustomAppBarOne(110, text: 'Chat',ontap: (){Get.back();},),
-        ],
-      )
+      appBar: DefaultAppBar(110, text: 'Chat', onTap: (){}),
+
     );
   }
 }

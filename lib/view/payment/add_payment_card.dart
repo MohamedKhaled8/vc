@@ -19,11 +19,11 @@ class AddPaymentCard extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
+      appBar: DefaultAppBar(110, text: 'Add Payment Card',onTap: (){Get.back();},),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          CustomAppBarOne(110, text: 'Add Payment Card',ontap: (){Get.back();},),
           50.ph,
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 30),

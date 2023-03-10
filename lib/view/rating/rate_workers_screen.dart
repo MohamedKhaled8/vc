@@ -28,6 +28,9 @@ class _RateWorkerScreenState extends State<RateWorkerScreen> {
         .of(context)
         .size;
     return Scaffold(
+      appBar: DefaultAppBar(110, text: 'Rate Experience', onTap: () {
+        Get.back();
+      },),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -35,9 +38,6 @@ class _RateWorkerScreenState extends State<RateWorkerScreen> {
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                CustomAppBarOne(110, text: 'Rate Experience', ontap: () {
-                  Get.back();
-                },),
                 50.ph,
                 Container(
                   height: screenUtil.setHeight(120),

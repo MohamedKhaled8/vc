@@ -14,9 +14,9 @@ class PaymentSettingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return  Scaffold(
+      appBar: DefaultAppBar(110, text: 'Payment Settings',onTap: (){Get.back();},),
       body: Column(
         children: [
-          CustomAppBarOne(110, text: 'Payment Settings',ontap: (){Get.back();},),
           20.ph,
           buildContainerItem(context,color:  [
             const Color(0xFF0099D6),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:vc/theme/extensions/extensions.dart';
 import 'package:vc/view/auth_view/auth_view.dart';
@@ -9,45 +10,66 @@ import '../../../theme/constant/const_colors.dart';
 import '../payment/payment_setting_screen.dart';
 
 class UserProfile extends StatelessWidget {
-  const UserProfile({super.key});
-
+   UserProfile({super.key});
+final ScreenUtil screenUtil = ScreenUtil();
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
+      extendBodyBehindAppBar: true,
       body: Column(
         children: [
           Stack(
-            clipBehavior: Clip.none,
-            alignment: Alignment.bottomCenter,
             children: [
-              CustomAppBarOne(160, text: 'User Profile',ontap: (){},),
+              SizedBox(
+                width: size.width,
+                height: size.height / 2 - 107,
+              ),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 5),
+                height: size.height / 2 - 170,
+                decoration: BoxDecoration(
+                  color: ColorApp.primary,
+                  borderRadius: const BorderRadius.only(
+                    bottomLeft: Radius.circular(20),
+                    bottomRight: Radius.circular(20),
+                  ),
+                ),
+                child: Column(
+                  children: [
+                    DefaultAppBar(160, text: 'User Profile',onTap: (){Get.back();},),
+                  ],
+                ),
+              ),
               Positioned(
-                  bottom: -50,
-                  child: Container(
-                    height: 100,
-                    width: 100,
-                    decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Colors.white,
-                        boxShadow: [
-                          BoxShadow(
-                            spreadRadius: 3,
-                            blurRadius: 3,
-                            color: Colors.grey.withOpacity(0.5),
-                            offset: const Offset(0, 3),
-                          ),
-                        ],
-                        image: const DecorationImage(
-                          image: AssetImage(
-                            'assets/images/jpeg/mohamed.jpeg',
-                          ),
-                          fit: BoxFit.cover,
-                        ),),
-                  ),),
+                left: 50,
+                right: 50,
+                top: size.height / 3 - 140,
+                child: Container(
+                  height: screenUtil.setHeight(176),
+                  width: screenUtil.setWidth(176),
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.white,
+                    boxShadow: [
+                      BoxShadow(
+                        spreadRadius: 3,
+                        blurRadius: 3,
+                        color: Colors.grey.withOpacity(0.5),
+                        offset: const Offset(0, 3),
+                      ),
+                    ],
+                    image: const DecorationImage(
+                      image: AssetImage(
+                        'assets/images/jpeg/mohamed.jpeg',
+                      ),
+                      fit: BoxFit.cover,
+                    ),),
+                ),
+              ),
             ],
           ),
-          60.ph,
+          20.ph,
           const Text(
             'Ahmed Mabrouk',
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
