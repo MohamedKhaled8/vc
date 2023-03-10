@@ -19,7 +19,6 @@ class OnBoardingScreen extends StatefulWidget {
 
 class _OnBoardingScreenState extends State<OnBoardingScreen> {
   int currentIndex = 0;
-  // ignore: unused_field
   PageController? _controller;
   @override
   void initState() {
@@ -108,7 +107,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   screenUtil: screenUtil,
                   text: 'Skip' ,
                   ontap: (){
-                    Get.to(()=>BottomNavBar());
+                    Get.to(()=>const AuthAppView());
                   },
                   color: ColorApp.secound, color1: Colors.black,
                 ),

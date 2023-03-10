@@ -113,49 +113,51 @@ class PaymentSettingScreen extends StatelessWidget {
       ),
     );
   }
-  Container buildContainerItem(BuildContext context,{required Widget child,required List<Color> color}){
-    return Container(
-      width: MediaQuery.of(context).size.width-30,
-      height: 155,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(15),
-        color: Colors.white,
-        boxShadow: [
-          BoxShadow(
-            spreadRadius: 3,
-            blurRadius: 3,
-            color: Colors.grey.withOpacity(0.5),
-            offset: Offset(0, 3),
-          ),
-        ],
-      ),
-      child: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 10),
-            child: Container(
-              width: MediaQuery.of(context).size.width - 50,
-              height: 95,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                  gradient: LinearGradient(
-                begin: Alignment.topRight,
-                end: Alignment.bottomLeft,
-                    stops: const [1.0, 0.0],
-                colors:color
-              ),
-              ),
-              child: child,
+  Padding buildContainerItem(BuildContext context,{required Widget child,required List<Color> color}){
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 10),
+      child: Container(
+        height: 155,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(15),
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              spreadRadius: 3,
+              blurRadius: 3,
+              color: Colors.grey.withOpacity(0.5),
+              offset: Offset(0, 3),
             ),
-          ),
-          CustomButtonTWo(
-            onTap: () {},
-            screenUtil: screenUtil,
-            txt: 'Delete Card',
-            color: Colors.grey.withOpacity(0.3),
-            color1: Colors.black,
-          ),
-        ],
+          ],
+        ),
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 10),
+              child: Container(
+                width: MediaQuery.of(context).size.width - 50,
+                height: 95,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                    gradient: LinearGradient(
+                  begin: Alignment.topRight,
+                  end: Alignment.bottomLeft,
+                      stops: const [1.0, 0.0],
+                  colors:color
+                ),
+                ),
+                child: child,
+              ),
+            ),
+            CustomButtonTWo(
+              onTap: () {},
+              screenUtil: screenUtil,
+              txt: 'Delete Card',
+              color: Colors.grey.withOpacity(0.3),
+              color1: Colors.black,
+            ),
+          ],
+        ),
       ),
     );
 

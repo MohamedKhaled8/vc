@@ -37,7 +37,7 @@ final ScreenUtil screenUtil = ScreenUtil();
                 ),
                 child: Column(
                   children: [
-                    DefaultAppBar(160, text: 'User Profile',onTap: (){Get.back();},),
+                    DefaultAppBar(160, text: 'User Profile',onTap: (){},),
                   ],
                 ),
               ),

@@ -80,7 +80,7 @@ class _SplashScreenState extends State<SplashScreen> {
                   color: Colors.green,
                   color1: Colors.white,
                   ontap: () {
-                    Get.to(const OnBoardingScreen());
+                    Get.to(()=> const OnBoardingScreen());
                   }),
             ],
           ),
