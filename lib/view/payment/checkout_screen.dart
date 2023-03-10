@@ -36,7 +36,13 @@ class CheckoutScreen extends StatelessWidget {
                 ),
                 child: Column(
                   children: [
-                    DefaultAppBar(110, text: 'Checkout',onTap: (){Get.back();},),
+                    DefaultAppBar(
+                      110,
+                      text: 'Checkout',
+                      onTap: () {
+                        Get.back();
+                      },
+                    ),
                   ],
                 ),
               ),
@@ -47,7 +53,8 @@ class CheckoutScreen extends StatelessWidget {
                 child: Container(
                   width: size.width,
                   height: 140,
-                  decoration: buildShadowContainer(borderRadius: BorderRadius.circular(15)),
+                  decoration: buildShadowContainer(
+                      borderRadius: BorderRadius.circular(15)),
                   child: Column(
                     children: [
                       Padding(
@@ -56,40 +63,50 @@ class CheckoutScreen extends StatelessWidget {
                           width: size.width - 90,
                           height: 80,
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            color: Colors.yellow.shade700,
-                            image: DecorationImage(
-                              image: AssetImage('assets/icons/checkout.png')
-                            )
-                          ),
+                              borderRadius: BorderRadius.circular(20),
+                              color: Colors.yellow.shade700,
+                              image: const DecorationImage(
+                                  image:
+                                      AssetImage('assets/icons/checkout.png'))),
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Column(
                               children: [
                                 Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
                                   children: [
-                            Text('Change Card',style: TextStyle(fontSize: 18,color: Colors.white),),
+                                    const Text(
+                                      'Change Card',
+                                      style: TextStyle(
+                                          fontSize: 18, color: Colors.white),
+                                    ),
                                     Container(
                                       height: screenUtil.setHeight(30),
                                       width: screenUtil.setWidth(30),
-                                      decoration: BoxDecoration(
+                                      decoration: const BoxDecoration(
                                           color: Colors.white,
-                                          shape: BoxShape.circle
-                                      ),
+                                          shape: BoxShape.circle),
                                     ),
-
                                   ],
                                 ),
                                 20.ph,
                                 Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text('•••• •••• •••• 3333',style: TextStyle(fontSize: 14,color: Colors.white),),
-                                    Text('07/24',style: TextStyle(fontSize: 14,color: Colors.white),),
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: const[
+                                     Text(
+                                      '•••• •••• •••• 3333',
+                                      style: TextStyle(
+                                          fontSize: 14, color: Colors.white),
+                                    ),
+                                     Text(
+                                      '07/24',
+                                      style: TextStyle(
+                                          fontSize: 14, color: Colors.white),
+                                    ),
                                   ],
                                 ),
-
                               ],
                             ),
                           ),
@@ -97,14 +114,19 @@ class CheckoutScreen extends StatelessWidget {
                       ),
                       Container(
                         height: screenUtil.setHeight(48),
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           color: Colors.grey,
                           borderRadius: BorderRadius.only(
                             bottomRight: Radius.circular(15),
                             bottomLeft: Radius.circular(15),
                           ),
                         ),
-                        child: Center(child: Text('Change Card',style: TextStyle(fontSize: 18),),),
+                        child: const Center(
+                          child: Text(
+                            'Change Card',
+                            style: TextStyle(fontSize: 18),
+                          ),
+                        ),
                       ),
                     ],
                   ),
@@ -116,19 +138,24 @@ class CheckoutScreen extends StatelessWidget {
             child: Container(
               width: size.width / 2,
               height: 40,
-              decoration: buildShadowContainer(borderRadius: BorderRadius.circular(5)),
+              decoration:
+                  buildShadowContainer(borderRadius: BorderRadius.circular(5)),
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 5),
                 child: Row(
                   children: [
                     Container(
                       height: 30,
-                      width:30,
+                      width: 30,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         border: Border.all(color: ColorApp.primary),
                       ),
-                      child: Center(child: Icon(Icons.add,color: ColorApp.primary,)),
+                      child: Center(
+                          child: Icon(
+                        Icons.add,
+                        color: ColorApp.primary,
+                      )),
                     ),
                     SizedBox(
                       width: screenUtil.setWidth(10),
@@ -147,105 +174,122 @@ class CheckoutScreen extends StatelessWidget {
           Container(
             height: screenUtil.setHeight(186.5),
             width: size.width - 40,
-            decoration: buildShadowContainer(borderRadius: BorderRadius.circular(20)),
-             child: Column(
-               mainAxisAlignment: MainAxisAlignment.start,
-               crossAxisAlignment: CrossAxisAlignment.start,
-               children: [
-                 Padding(
-                   padding: const EdgeInsets.all(8.0),
-                   child: Column(
-                     crossAxisAlignment: CrossAxisAlignment.start,
-                     children: [
-                       Text(
-                         'Order details',
-                         style: TextStyle(fontSize: 18, color: ColorApp.primary),
-                       ),
+            decoration:
+                buildShadowContainer(borderRadius: BorderRadius.circular(20)),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Order details',
+                        style: TextStyle(fontSize: 18, color: ColorApp.primary),
+                      ),
+                      10.ph,
+                      Row(
+                        children: [
+                          Expanded(
+                            child: Row(
+                              children: const [
+                                Text(
+                                  'Date :',
+                                  style: TextStyle(
+                                      fontSize: 14, color: Colors.grey),
+                                ),
+                                Text(
+                                  'September 21, 2023',
+                                  style: TextStyle(fontSize: 12),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Row(
+                            children: const [
+                              Text(
+                                'Time :',
+                                style:
+                                    TextStyle(fontSize: 14, color: Colors.grey),
+                              ),
+                              Text(
+                                '01:30 pm',
+                                style: TextStyle(fontSize: 12),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                      10.ph,
+                      const Text(
+                        'Address :',
+                        style: TextStyle(fontSize: 14, color: Colors.grey),
+                      ),
+                      const Text(
+                        '95, Opposite Arjun College, Kairav Plot, Township No. 21',
+                        style: TextStyle(fontSize: 12),
+                      ),
+                    ],
+                  ),
+                ),
                 10.ph,
-                       Row(
-                         children: [
-                           Expanded(
-                             child: Row(
-                               children: const [
-                                 Text(
-                                   'Date :',
-                                   style:
-                                       TextStyle(fontSize: 14, color: Colors.grey),
-                                 ),
-                                 Text(
-                                   'September 21, 2023',
-                                   style: TextStyle(fontSize: 12),
-                                 ),
-                               ],
-                             ),
-                           ),
-                           Row(
-                             children: [
-                               Text(
-                                 'Time :',
-                                 style: TextStyle(fontSize: 14, color: Colors.grey),
-                               ),
-                               Text(
-                                 '01:30 pm',
-                                 style: TextStyle(fontSize: 12),
-                               ),
-                             ],
-                           ),
-                         ],
-                       ),
-                       10.ph,
-                       const Text(
-                         'Address :',
-                         style: TextStyle(fontSize: 14, color: Colors.grey),
-                       ),
-                       const Text(
-                         '95, Opposite Arjun College, Kairav Plot, Township No. 21',
-                         style: TextStyle(fontSize: 12),
-                       ),
-                     ],
-                   ),
-                 ),
-                 10.ph,
-                 Row(
-                   children: [
-                     Expanded(
-                         child:InkWell(
-                           onTap:(){
-                             Get.to(()=>OrderDetailsScreen());
-                           },
-                           child: Container(
-                             height: 40,
-                             decoration: BoxDecoration(
-                               color: ColorApp.primary,
-                               borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10),bottomRight: Radius.circular(10),),
-                             ),
-                             child: Center(child: Text('See All',style: TextStyle(color: Colors.white,fontSize: 14),),),
-                           ),
-                         )),
-                     5.pw,
-                     Expanded(
-                         child:InkWell(
-                           onTap:(){
-                           },
-                           child: Container(
-                             height: 40,
-                             decoration: BoxDecoration(
-                               color: ColorApp.buttonBlue,
-                               borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10),bottomRight: Radius.circular(10),),
-                             ),
-                             child: Center(child: Text('Edit',style: TextStyle(color: Colors.white,fontSize: 14),),),
-                           ),
-                         )),
-                   ],
-                 ),
-               ],
-             ),
+                Row(
+                  children: [
+                    Expanded(
+                        child: InkWell(
+                      onTap: () {
+                        Get.to(() => OrderDetailsScreen());
+                      },
+                      child: Container(
+                        height: 40,
+                        decoration: BoxDecoration(
+                          color: ColorApp.primary,
+                          borderRadius: const BorderRadius.only(
+                            bottomLeft: Radius.circular(10),
+                          ),
+                        ),
+                        child: const Center(
+                          child: Text(
+                            'See All',
+                            style: TextStyle(color: Colors.white, fontSize: 14),
+                          ),
+                        ),
+                      ),
+                    )),
+                    2.pw,
+                    Expanded(
+                        child: InkWell(
+                      onTap: () {},
+                      child: Container(
+                        height: 40,
+                        decoration: BoxDecoration(
+                          color: ColorApp.buttonBlue,
+                          borderRadius: const BorderRadius.only(
+                            bottomRight: Radius.circular(10),
+                          ),
+                        ),
+                        child: const Center(
+                          child: Text(
+                            'Edit',
+                            style: TextStyle(color: Colors.white, fontSize: 14),
+                          ),
+                        ),
+                      ),
+                    )),
+                  ],
+                ),
+              ],
+            ),
           ),
           10.ph,
           Container(
             height: 158,
             width: size.width - 40,
-            decoration: buildShadowContainer(borderRadius: BorderRadius.circular(20),),
+            decoration: buildShadowContainer(
+              borderRadius: BorderRadius.circular(20),
+            ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -279,7 +323,7 @@ class CheckoutScreen extends StatelessWidget {
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
+                        children: const [
                           Text(
                             'Delivery',
                             style: TextStyle(fontSize: 18, color: Colors.grey),
@@ -295,7 +339,7 @@ class CheckoutScreen extends StatelessWidget {
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
+                        children: const [
                           Text(
                             'Discount',
                             style: TextStyle(fontSize: 18, color: Colors.grey),
@@ -314,36 +358,37 @@ class CheckoutScreen extends StatelessWidget {
                   child: Row(
                     children: [
                       Expanded(
-                          child:Container(
-                            height: 40,
-                            decoration: BoxDecoration(
-                              color: ColorApp.primary,borderRadius: BorderRadius.only(bottomLeft: Radius.circular(20),bottomRight: Radius.circular(20),)
-                            ),
-                            child:
-                            Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Row(
-                    mainAxisAlignment:
-                    MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text('Total',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w500,
-                              fontStyle: FontStyle.normal,
-                              fontSize: 20.0),
-                          textAlign: TextAlign.center),
-                      Text('260\$',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w500,
-                              fontStyle: FontStyle.normal,
-                              fontSize: 18.0),
-                          textAlign: TextAlign.center),
-                    ],
-                  ),
-                ),
-                          )),
+                          child: Container(
+                        height: 40,
+                        decoration: BoxDecoration(
+                            color: ColorApp.primary,
+                            borderRadius: const BorderRadius.only(
+                              bottomLeft:  Radius.circular(20),
+                              bottomRight:  Radius.circular(20),
+                            )),
+                        child: Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: const [
+                              Text('Total',
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w500,
+                                      fontStyle: FontStyle.normal,
+                                      fontSize: 20.0),
+                                  textAlign: TextAlign.center),
+                              Text('260\$',
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w500,
+                                      fontStyle: FontStyle.normal,
+                                      fontSize: 18.0),
+                                  textAlign: TextAlign.center),
+                            ],
+                          ),
+                        ),
+                      )),
                     ],
                   ),
                 ),
@@ -358,14 +403,17 @@ class CheckoutScreen extends StatelessWidget {
       bottomNavigationBar: Container(
         height: 50,
         width: size.width,
-        decoration:buildShadowContainer(borderRadius: BorderRadius.circular(20)),
+        decoration:
+            buildShadowContainer(borderRadius: BorderRadius.circular(20)),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
           child: CustomButtonTWo(
             screenUtil: screenUtil,
             color: ColorApp.primary,
             color1: Colors.white,
-            txt: 'Payment confirmation',onTap: (){},),
+            txt: 'Payment confirmation',
+            onTap: () {},
+          ),
         ),
       ),
     );

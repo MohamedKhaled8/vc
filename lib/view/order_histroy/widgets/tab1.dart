@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import 'package:vc/controller/scanner_controller.dart';
 import 'package:vc/theme/extensions/extensions.dart';
 import 'package:vc/view/order_histroy/widgets/qr_scanner.dart';
-
 import '../../../theme/constant/const_colors.dart';
 import '../../../widgets/container_shadow.dart';
 import '../../payment/order_details_screen.dart';
@@ -57,7 +56,7 @@ final ScannerController scannerController = ScannerController();
                           ),
                         ),
                         Row(
-                          children: [
+                          children: const [
                             Text(
                               'Time :',
                               style: TextStyle(fontSize: 14, color: Colors.grey),
@@ -154,7 +153,7 @@ final ScannerController scannerController = ScannerController();
                             color: Colors.grey,
                             borderRadius: BorderRadius.circular(20),
                           ),
-                          child: Center(child: Text('Cancel',style: TextStyle(fontSize: 12),),),
+                          child: const Center(child:  Text('Cancel',style: TextStyle(fontSize: 12),),),
                         ),
                       ],
                     ),
@@ -177,7 +176,7 @@ final ScannerController scannerController = ScannerController();
                           ),
                         ),
                         Row(
-                          children: [
+                          children: const [
                             Text(
                               'Time :',
                               style: TextStyle(fontSize: 14, color: Colors.grey),
@@ -223,13 +222,13 @@ final ScannerController scannerController = ScannerController();
                   Expanded(
                       child:InkWell(
                         onTap:(){
-                          Get.to(()=>ServiceFormScreen());
+                          Get.to(()=>const ServiceFormScreen());
                         },
                         child: Container(
                           height: 40,
                           decoration: BoxDecoration(
                             color: ColorApp.buttonBlue,
-                            borderRadius: BorderRadius.only(bottomRight: Radius.circular(10),),
+                            borderRadius: const BorderRadius.only(bottomRight: Radius.circular(10),),
                           ),
                           child: const Center(child:Text('ReSchedule',style: TextStyle(color: Colors.white,fontSize: 14),),),
                         ),
