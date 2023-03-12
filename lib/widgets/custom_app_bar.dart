@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:vc/theme/extensions/extensions.dart';
-import 'package:vc/view/messages/chat_view.dart';
-import 'package:vc/view/messages/messages.dart';
+import 'package:vc/view/messages/views/chat_view.dart';
+import 'package:vc/view/messages/views/messages.dart';
 import 'package:vc/widgets/rating.dart';
 
 import '../controller/myController.dart';

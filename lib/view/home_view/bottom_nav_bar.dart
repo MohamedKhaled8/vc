@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:vc/theme/constant/const_colors.dart';
 import 'package:vc/view/home_view/home.dart';
 
-import '../messages/messages.dart';
+import '../messages/views/messages.dart';
 import '../order_histroy/order_history_screen.dart';
 import '../user_profile/user_profile.dart';
 
@@ -27,7 +27,7 @@ class _BottomNavBarState extends State<BottomNavBar>
   List<Widget> myPages =  [
     HomeView(),
     OrderHistoryScreen(),
-    MessagesView(),
+    ChatScreen(),
     UserProfile(),
   ];
 
