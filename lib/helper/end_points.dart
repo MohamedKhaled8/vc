@@ -42,7 +42,7 @@ class EndPointName {
   static const String CANCELEDORDER = '${BASEERL}cancel/';
   static const String CONTACTUS = '${BASEERL}contact-us';
   static const String SENDMESSAGE = '${BASEERL}store-message';
-  static const String CHECKROOMMESSAGE = '${BASEERL}store-message';
+  static const String CHECKROOMMESSAGE = '${BASEERL}checkroom';
   static const String LATESTMESSAGE = '${BASEERL}latest-messages';
   static const String ROOMMESSAGE = '${BASEERL}room-messages';
   static const String REQUIREMENT = '${BASEERL}all/requirement/';

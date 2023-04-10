@@ -9,7 +9,8 @@ class SendMessageService {
         required Map<String, dynamic> body
       }
       ) async {
-    final data = await ApiService().post(
+    final data = await ApiService().multiPartR(
+
       url: EndPointName.SENDMESSAGE,
       body: body,
       token: token,

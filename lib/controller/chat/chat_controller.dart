@@ -81,7 +81,7 @@ class ChatController extends GetxController {
       },
       token: await getToken(),
     );
-    if (data['message'] == 'Success' && data['statusCode'] == 201) {
+    if (data['message'] == 'Success') {
       print(data);
       return CheckRoomModel.fromJson(data);
     } else {

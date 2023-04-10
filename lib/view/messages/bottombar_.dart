@@ -61,15 +61,15 @@ class _ChatBottomBarState extends State<ChatBottomBar> {
                             final player = AudioPlayer();
                             final _Duration =
                                 await player.setUrl(soundFile.path);
-
-                            messageList.add(
-                              AudioChatBuble(
-                                audio: soundFile.path,
-                                duration: _Duration!,
-                                sender: true,
-                              ),
-                            );
-                            setState(() {});
+                            await chatController.sendMessage(message: soundFile.path, roomId: '12', context: context);
+                            // messageList.add(
+                            //   AudioChatBuble(
+                            //     audio: soundFile.path,
+                            //     duration: _Duration!,
+                            //     sender: true,
+                            //   ),
+                            // );
+                            // setState(() {});
                           },
                           encode: AudioEncoderType.AAC,
                         ),

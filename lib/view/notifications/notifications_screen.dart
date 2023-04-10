@@ -2,11 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:vc/controller/notification_controller.dart';
 import 'package:vc/model/notification_model.dart';
-import 'package:vc/model/notifications_model.dart';
 import 'package:vc/view/notifications/notification_card.dart';
-
 import 'package:vc/widgets/custom_containert_top_screen.dart';
-
 import '../../helper/end_points.dart';
 import '../../theme/constant/sized.dart';
 
@@ -34,6 +31,7 @@ class NotificationsView extends StatelessWidget {
                   screenUtil: screenUtil)
             ],
           ),
+          SizedBox(height: screenUtil.setHeight(15),),
           FutureBuilder(
               future: notificationController.notification(
                   context: context, url: EndPointName.NOTIFICATIONS),
@@ -48,11 +46,11 @@ class NotificationsView extends StatelessWidget {
                         );
                       },
                       separatorBuilder: (context, index) {
-                        return const SizedBox();
+                        return  SizedBox(height: screenUtil.setHeight(15),);
                       },
                       itemCount: notificationModel.data!.length,
                       shrinkWrap: true,
-                      physics: const NeverScrollableScrollPhysics(),
+                      // physics: const NeverScrollableScrollPhysics(),
                     ),
                   );
                 } else {

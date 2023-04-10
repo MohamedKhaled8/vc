@@ -46,8 +46,8 @@ class MassageScreen extends StatelessWidget {
 
               FutureBuilder(
                   future: chatController.checkRoomMessage(
-                      // userId:loginData.userData.id.toString(),
-                    userId: '3',
+                       // userId:loginData.userData.id.toString(),
+                     userId: '3',
                       context: context),
                   builder: (context, snapshot) {
                     if (snapshot.hasData &&

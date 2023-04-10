@@ -7,6 +7,8 @@ import 'package:vc/view/messages/chat_appbar.dart';
 import 'package:vc/view/messages/image_chat_bubble.dart';
 import 'package:vc/view/messages/text_chat_bubble.dart';
 
+import '../../../theme/constant/sized.dart';
+
 class ChatView extends StatelessWidget {
   ChatView({super.key});
 
@@ -18,53 +20,55 @@ class ChatView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          const ChatAppBar(),
-          StreamBuilder(
-            stream: chatController.getRoomMessage(id: '11', context: context).asStream(),
-            builder: (context, snapshot) {
-              if (snapshot.connectionState == ConnectionState.done &&
-                  snapshot.hasData) {
-                final GetRoomMessageModel roomMessage =
-                    snapshot.data as GetRoomMessageModel;
-                for (var element in roomMessage.data!) {
-                  if (element.senderId == loginData.userData.id) {
-                    sender = true;
-                  } else {
-                    sender = false;
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            const ChatAppBar(),
+            StreamBuilder(
+              stream: chatController.getRoomMessage(id: '11', context: context).asStream(),
+              builder: (context, snapshot) {
+                if (snapshot.connectionState == ConnectionState.done &&
+                    snapshot.hasData) {
+                  final GetRoomMessageModel roomMessage =
+                      snapshot.data as GetRoomMessageModel;
+                  for (var element in roomMessage.data!) {
+                    if (element.senderId == loginData.userData.id) {
+                      sender = true;
+                    } else {
+                      sender = false;
+                    }
+                    if (element.media.isEmpty) {
+                      messageList.add(
+                        TextChatBubble(message: element.message, sender: sender),
+                      );
+                    } else {
+                      messageList.add(
+                        ImageChatBubble(
+                            image: element.media.first,
+                            sender: sender,
+                            id: element.id.toString()),
+                      );
+                    }
                   }
-                  if (element.media.isEmpty) {
-                    messageList.add(
-                      TextChatBubble(message: element.message, sender: sender),
-                    );
-                  } else {
-                    messageList.add(
-                      ImageChatBubble(
-                          image: element.media.first,
-                          sender: sender,
-                          id: element.id.toString()),
-                    );
-                  }
+                  return Expanded(
+                    child: ListView.builder(
+                        controller: _scrollController,
+                        itemCount: messageList.length,
+                        itemBuilder: (context, index) {
+                          return messageList[index];
+                        }),
+                  );
+                } else {
+                  return  SizedBox(height: screenUtil.setHeight(585),);
                 }
-                return Expanded(
-                  child: ListView.builder(
-                      controller: _scrollController,
-                      itemCount: messageList.length,
-                      itemBuilder: (context, index) {
-                        return messageList[index];
-                      }),
-                );
-              } else {
-                return const SizedBox();
-              }
-            },
-          ),
-          const Padding(
-            padding: EdgeInsets.only(bottom: 20, top: 8),
-            child: ChatBottomBar(),
-          ),
-        ],
+              },
+            ),
+            const Padding(
+              padding: EdgeInsets.only(bottom: 20, top: 8),
+              child: ChatBottomBar(),
+            ),
+          ],
+        ),
       ),
     );
   }
