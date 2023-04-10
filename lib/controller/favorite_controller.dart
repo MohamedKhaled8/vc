@@ -52,7 +52,7 @@ class FavoriteController extends GetxController {
   deleteFavorite({required String id,required BuildContext context,}) async {
     final data = await DeleteFavoriteService()
         .deleteFavorite(token: await getToken(), id: id);
-    if (data['statusCode'] != null && data['statusCode'] == 200) {
+    if (data['statusCode'] != null && data['status'] == 200) {
       return DeleteFavoriteModel.fromJson(data);
     } else {
       ScaffoldMessenger.of(context)

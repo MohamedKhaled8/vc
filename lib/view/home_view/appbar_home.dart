@@ -40,7 +40,7 @@ class AppBarHome extends StatelessWidget {
             ? InkWell(
                 onTap: () {
                   Get.to(
-                    const NotificationsView(),
+                      NotificationsView(),
                     transition: Transition.zoom,
                     duration: const Duration(milliseconds: 1000),
                   );

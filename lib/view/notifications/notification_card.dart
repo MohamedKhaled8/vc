@@ -1,24 +1,20 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
-import 'package:vc/controller/myController.dart';
-import 'package:vc/model/model_card.dart';
-import 'package:vc/model/notifications_model.dart';
 import 'package:vc/theme/constant/const_colors.dart';
+import '../../model/notification_model.dart';
 
 class NotificationsCard extends StatelessWidget {
-  final NotificationsModel? notificationsmodel;
+  final Data notificationData;
 
-  NotificationsCard({super.key, this.notificationsmodel});
-  final controller = Get.put(MyController());
+  const NotificationsCard({super.key, required this.notificationData});
 
   @override
   Widget build(BuildContext context) {
     ScreenUtil screenUtil = ScreenUtil();
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 16),
-      padding: EdgeInsets.symmetric(horizontal: 5),
+      margin: const EdgeInsets.symmetric(horizontal: 16),
+      padding: const EdgeInsets.symmetric(horizontal: 5),
       height: screenUtil.setHeight(85),
       alignment: Alignment.center,
       decoration: BoxDecoration(
@@ -43,18 +39,18 @@ class NotificationsCard extends StatelessWidget {
           ),
         ),
         title: Text(
-          'Moahmed Elsafty',
+          notificationData.title.toString(),
           style: TextStyle(
             color: ColorApp.primary,
             fontWeight: FontWeight.w500,
           ),
         ),
-        subtitle: Text('aaaaaaaaaaaaaaaaaaaa'),
+        subtitle: Text(notificationData.body.toString()),
         trailing: Padding(
-          padding: const EdgeInsets.only(bottom: 24, right: 10),
+          padding: EdgeInsets.only(bottom: 24, right: 10),
           child: Text(
-            '10 hours ago',
-            style: TextStyle(
+            notificationData.createdAt.toString(),
+            style: const TextStyle(
               fontSize: 12,
             ),
           ),

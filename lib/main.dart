@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:vc/helper/check_internet.dart';
 import 'package:vc/helper/secure_storage.dart';
 import 'package:vc/view/frist_splash_view/frist_splash_screen.dart';
+import 'package:vc/view/messages/views/chat_view.dart';
 import 'helper/db_sh.dart';
 
 main() async {
@@ -25,10 +26,10 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       designSize: const Size(393, 852),
       builder: (context, child) {
-        return const GetMaterialApp(
+        return  GetMaterialApp(
           title: 'Value Cleaning',
           debugShowCheckedModeBanner: false,
-          home: FristSplashScreen(),
+          home: ChatView(),
         );
       },
     );

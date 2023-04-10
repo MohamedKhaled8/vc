@@ -36,7 +36,7 @@ class _ChatBottomBarState extends State<ChatBottomBar> {
                 _.msgLen
                     ? InkWell(
                         onTap: ()async {
-                         await chatController.sendMessage(message: _textController.text, roomId: '11', context: context);
+                         await chatController.sendMessage(message: _textController.text, roomId: '12', context: context);
                         },
                         child: Container(
                           height: 40,

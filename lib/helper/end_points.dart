@@ -47,4 +47,6 @@ class EndPointName {
   static const String ROOMMESSAGE = '${BASEERL}room-messages';
   static const String REQUIREMENT = '${BASEERL}all/requirement/';
   static const String JOBSDONE = '${BASEERL}jobDone/';
+  static const String UNREADNOTIFICATIONS = '${BASEERL}unreadNotification';
+  static const String NOTIFICATIONS = '${BASEERL}notification';
 }
